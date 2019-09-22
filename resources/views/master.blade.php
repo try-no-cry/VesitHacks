@@ -59,7 +59,7 @@
  <div id="page-container">
    <div id="content-wrap">
      <!-- all other page content -->
-       <nav role="navigation" style="background-color: teal">
+       <nav role="navigation" style="background-color: #B3E5FC">
                  <div class="nav-wrapper container" >
                    <img id="logo-container" src="images/EPRAS-ICON.png" class="brand-logo">
 
@@ -71,7 +71,7 @@
                   {{-- Login Modal --}}
                    <div id="modal1" class="modal  grey lighten-2">
                       <div class="modal-content">
-                        <h4 class="black-text">Login</h4>
+                        <h4 class="black-text" style="text-color:white">Login</h4>
                         <div class="row">
                             <form class="col s12">
                               <div class="row">
