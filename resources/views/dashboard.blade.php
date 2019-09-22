@@ -28,8 +28,7 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                         <h5 class="center"><a href='/profile'>Profile</a></h5>
-             
+                         <a href="{{ url('/profiledetails') }}"><h5 class="center">Profile</h5></a>
                          <p class="center light">View Profile Deatils</p>
                        </div>
                      </div>
@@ -73,7 +72,8 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                         <h5 class="center"><a href='/alert'>Alert Boss</a></h5>
+                         <a href="{{ url('/alert') }}"><h5 class="center">Alert Boss</h5></a>
+                         
              
                          <p class="center light">Alert your direct superior about exceptional/poor performance of your subordinates</p>
                        </div>

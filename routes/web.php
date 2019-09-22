@@ -22,7 +22,7 @@ Route::get('/register', function () {
 
 Route::get('/dashboard', 'HomeController@showdashboard');
 
-Route::get('/profile','HomeController@profileDetails');
+Route::get('/profiledetails','HomeController@profileDetails');
 
 Route::get('/sendreport','HomeController@sendReport');
 
