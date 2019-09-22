@@ -28,6 +28,24 @@ class HomeController extends Controller
 
 
  public function login(){
+    //  return 123;
+    //  $email= $request->input('email');
+	// 			$pass= $request->input('password');
+	// 			//return $username;
+	// 			//return $pass;
+	// 			$user = DB::table('users')->select('password')->where('email',$email)->get();
+	// 			//return $user;
+	// 			if($pass == $user[0]->password)
+	// 				{
+	// 						$request->session()->put('username',$username);
+	// 						return "abhay";
+	// 				}
+	// 			else
+	// 			{
+    //                 $request->session()->flash('error','Invalid Username & Password');
+    //             }
+    //                 // return redirect()->route('admin_login');
+                    
      $email=request()->email;
      $pwd=request()->password;
 
@@ -44,9 +62,17 @@ class HomeController extends Controller
        if($ans==true)
             {
                 $_SESSION['user']=$user;
-                $dd($user);
+                
+               return view('welcome');
             }
-       else return  back()->withErrors(['Wrong Credentials']);     
+       else 
+       return  back()->withErrors(['Wrong Credentials']);     
+ }
+
+ public function logout(){
+     $_SESSION['user']=null;
+
+     return view('welcome');
  }
   
  public function index()

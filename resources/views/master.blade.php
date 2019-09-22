@@ -62,10 +62,9 @@
        <nav role="navigation" style="background-color: teal">
                  <div class="nav-wrapper container" >
                    <a id="logo-container" href="#" class="brand-logo">EPARS</a>
-
                    <ul class="right ">
-                     <li><a  class='modal-trigger' href="#modal1">Login </a></li>
-                     
+                  
+                   <li><a  class='modal-trigger' href="#modal1">Login </a></li>
 
                    </ul>
                   {{-- Login Modal --}}
@@ -73,7 +72,7 @@
                       <div class="modal-content">
                         <h4 class="black-text">Login</h4>
                         <div class="row">
-                            <form  action="{{route('login') }}" method="POST" class="col s12">
+                            <form  action="{{ route('login') }}" method="post" class="col s12">
                               @csrf
                               <div class="row">
                                
@@ -89,7 +88,7 @@
                                   <label for="password">Password</label>
                                 </div>
                               </div>
-                              <button class="btn waves-effect waves-light" type="submit" name="action">Login                            
+                              <button class="btn waves-effect waves-light" type="submit" name="login">Login                            
                               </button>
                              
                             </form>
