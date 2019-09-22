@@ -2,16 +2,6 @@
 @section('content')
   <head>
 
-<style>
-  .selection{
-    padding: 2rem;
-    margin: 2rem; 
-  }
-  .selection input{
-    padding: 5px;
-  }
-  </style>
-
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -36,8 +26,7 @@
           'options': {
             'filterColumnLabel': 'Name',
             'ui': {'labelStacking': 'vertical',
-            'cssClass': 'selection'
-          
+           
           }
           }
         });
@@ -53,7 +42,8 @@
             'legend': 'none',
             'chartArea': {'left': 30, 'top': 30, 'right': 30, 'bottom': 30},
             'pieSliceText': 'value'
-          }
+          },
+          'responsive':true
         });
 
 
