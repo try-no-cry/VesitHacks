@@ -82,8 +82,12 @@ class HomeController extends Controller
  }
 
  public function showDashboard () {
-    if(Session::get('user')==null)
-            return redirect()->route('welcome');
+     
+    if(Session::get('user')==null){
+        
+        return redirect()->route('welcome');
+    }
+           
      else $user=Session::get('user')->first();  
 
      return view('dashboard',compact('user')) ;
