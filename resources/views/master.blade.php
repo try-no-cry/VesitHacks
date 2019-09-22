@@ -2,12 +2,22 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <style>
-            #page-footer {
-              position: fixed;
-              left: 0;
+            #page-container {
+              position: relative;
+              min-height: 100vh;
+            }
+
+            #content-wrap {
+              padding-bottom: 15rem;    /* Footer height */
+            }
+
+            footer {
+              position: absolute;
               bottom: 0;
               width: 100%;
-           }
+              height: 15rem;            /* Footer height */
+            }
+
         </style>
         <meta charset="utf-8">
        
@@ -41,8 +51,15 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     </head>
+    
+    
+    
+    
     <body>
-    <nav role="navigation" style="background-color: teal">
+ <div id="page-container">
+   <div id="content-wrap">
+     <!-- all other page content -->
+       <nav role="navigation" style="background-color: teal">
                  <div class="nav-wrapper container" >
                    <a id="logo-container" href="#" class="brand-logo">EPARS</a>
 
@@ -85,13 +102,9 @@
                   
                </nav>
 
-
-             
-        
-
      @yield('content')
-
-     <footer class="page-footer" style="background-color:#3F51B5">
+   </div>
+   <footer class="page-footer" style="background-color:#3F51B5">
                  <div class="container">
                    <div class="row">
                      <div class="col l6 s12">
@@ -114,7 +127,7 @@
                    </div>
                  </div>
                </footer>
-
+ </div>
                     <!-- Compiled and minified JavaScript -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <script>
