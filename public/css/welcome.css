@@ -9,10 +9,16 @@
  nav ul a,
  nav .brand-logo {
    color: #444;
+   text-align: center;0
  }
  
  p {
    line-height: 2rem;
+ }
+
+ h2{
+   color: #C6FF00;
+  
  }
  
  .sidenav-trigger {
