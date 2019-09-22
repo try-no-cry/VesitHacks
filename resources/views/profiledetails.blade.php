@@ -55,24 +55,24 @@ body {
 			<form class="contact100-form validate-form">
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Full Name:</span>
-					<span class="label">Alisha Punwani </span>
+					<span class="label">{{ $user->name }} </span>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "ID is required">
 					<span class="label-input100">Employee   ID:</span>
-					<span class="label">41 </span>
+					<span class="label">{{ $user->user_id }} </span>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "ID is required">
 					<span class="label-input100">Designation:</span>
-					<span class="label">Web Developer </span>
+					<span class="label">{{ $user->designation }} </span>
 					<span class="focus-input100"></span>
 				</div>
         <div class="wrap-input100 validate-input" data-validate = "ID is required">
 					<span class="label-input100">Current Projects:</span>
-					<span class="label">EPARS </span>
+					<span class="label">{{ $user->current_project_id }} </span>
 					<span class="focus-input100"></span>
 				</div>
 

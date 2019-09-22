@@ -1,4 +1,5 @@
 @extends('app')
+
 @section('content')
 
 <div id="index-banner" class="parallax-container">
