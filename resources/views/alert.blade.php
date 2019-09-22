@@ -74,12 +74,16 @@ body {
 					<input class="input100" type="text" name="email" placeholder="Enter your ID">
 					<span class="focus-input100"></span>
 				</div>
-
-				<select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
+                
+                <div class="wrap-input100 validate-input" data-validate = "Option is required">
+                    <span class="label-input100">Performance:</span>
+                    <select class="input100">
+                        <option value="high">High Performer</option>
+                        <option value="low">Low Performer</option>
+                    </select>
+                    <span class="focus-input100"></span>
+				</div>
             
-                </select>
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
