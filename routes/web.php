@@ -26,6 +26,8 @@ Route::get('/dashboard', 'HomeController@showdashboard');
 Route::get('/profiledetails','HomeController@profileDetails');
 
 Route::get('/sendreport','HomeController@sendReport');
+Route::post('/sendreport','HomeController@sendReportWithFile');
+
 
 Route::get('/viewreport','HomeController@viewReport');
 

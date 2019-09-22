@@ -115,10 +115,16 @@ class HomeController extends Controller
      return view('sendreport',compact('user')) ;
  }
 
+ public function sendReportWithFile(){
+     dd(request());
+ }
+
  public  function viewReport() {
     if(Session::get('user')==null)
             return redirect()->route('welcome');
     else $user=Session::get('user'); 
+
+
      return view('viewreport',compact('user')) ;
  }
 

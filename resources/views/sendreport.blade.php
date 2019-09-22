@@ -53,7 +53,7 @@ body {
 				</span>
 			</div>
 
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="" method="post" enctype="multipart/form-data">
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Full Name:</span>
 					<input class="input100" type="text" name="name" placeholder="Enter full name">
@@ -74,14 +74,35 @@ body {
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+
+					{{ csrf_field()}}
+					<br><br><br><br><br>
+					<center>
+					@if($errors->any())
+						
+						 <h4 style="color:red;">{{$errors->first()}}</h4>
+						
+					@endif
+					<p style="font-weight: bold; font-family: 'Bree Serif', serif; font-size: 200%; color: black;"></p>
+					&emsp;&emsp;&emsp;&emsp;&emsp;
+					<input type="file" name="resume" id="resume" class=""><br>
+					<small style="color:red;"></small>
+					<br><br>
+					
+					</center>
+					<br>
+					<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" type="submit">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
 				</div>
+					
+				</form>
+
+			
 			</form>
 		</div>
 	</div>
