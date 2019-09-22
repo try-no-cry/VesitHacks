@@ -64,7 +64,7 @@ class HomeController extends Controller
             {
                 $_SESSION['user']=$user;
                 
-               return view('welcome');
+               return view('dashboard');
             }
        else 
        return  back()->withErrors(['Wrong Credentials']);     
