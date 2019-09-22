@@ -71,7 +71,7 @@ public function viewrate () {
                 DB::raw("r_for_id as id"),         
                 DB::raw("punctuality as punc"),
                 DB::raw("behaviour as bhvr"),
-                DB::raw("targets_achieved as targ"),
+                DB::raw("targets_acheived as targ"),
                 DB::raw("contribution as cntrb"),
                 )
             ->orderBy("id")
