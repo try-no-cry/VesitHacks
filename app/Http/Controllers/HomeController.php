@@ -65,6 +65,7 @@ class HomeController extends Controller
             {
                 // $_SESSION['user']=$user;
                 Session::put('user', $user);
+               
                return view('dashboard',compact('user'));
             }
        else 
@@ -84,11 +85,11 @@ class HomeController extends Controller
  public function showDashboard () {
      
     if(Session::get('user')==null){
-        
+
         return redirect()->route('welcome');
     }
            
-     else $user=Session::get('user')->first();  
+     else $user=Session::get('user');  
 
      return view('dashboard',compact('user')) ;
  }
@@ -100,32 +101,31 @@ class HomeController extends Controller
  }
 
  public function profileDetails () {
-
      if(Session::get('user')==null)
             return redirect()->route('welcome');
-     else $user=Session::get('user')->first();    
-     
+     else $user=Session::get('user');    
+
      return view('profiledetails',compact('user')) ;
  }
 
  public function sendReport () {
     if(Session::get('user')==null)
          return redirect()->route('welcome');
-    else $user=Session::get('user')->first();  
+    else $user=Session::get('user');  
      return view('sendreport',compact('user')) ;
  }
 
  public  function viewReport() {
     if(Session::get('user')==null)
             return redirect()->route('welcome');
-    else $user=Session::get('user')->first(); 
+    else $user=Session::get('user'); 
      return view('viewreport',compact('user')) ;
  }
 
  public function rate () {
     if(Session::get('user')==null)
              return redirect()->route('welcome');
-    else $user=Session::get('user')->first(); 
+    else $user=Session::get('user'); 
 
      return view('rate',compact('user')) ;
  }
@@ -133,7 +133,7 @@ class HomeController extends Controller
 public function viewrate () {
     if(Session::get('user')==null)
               return redirect()->route('welcome');
-    else $user=Session::get('user')->first(); 
+    else $user=Session::get('user'); 
 
             $review = DB::table('review')
             ->select(
@@ -170,7 +170,7 @@ public function viewrate () {
  function alert () {
     if(Session::get('user')==null)
               return redirect()->route('welcome');
-    else $user=Session::get('user')->first(); 
+    else $user=Session::get('user'); 
 
      return view('alert',compact('user'));
  }
