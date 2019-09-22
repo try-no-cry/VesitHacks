@@ -37,7 +37,7 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                         <h5 class="center"><a href='/sendreport'>Send reports</a></h5>
+                         <a href="{{ url('/sendreport') }}"><h5 class="center">Send reports</h5></a>
              
                          <p class="center light">Send new report to your direct supervisor</p>
                        </div>
