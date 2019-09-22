@@ -62,23 +62,11 @@
        <nav role="navigation" style="background-color: #B3E5FC">
                  <div class="nav-wrapper container" >
                    <img id="logo-container" class="brand-logo" src="images/EPRAS-ICON.png">
-                   <ul class="right ">
-                  
-                   <form action="{{ url('/logout') }}" method="post">
+                     <form action="{{ url('/logout') }}" method="post">
                    @csrf
-                            <button type="submit" class="btn waves-effect waves-light" >Logout</button>
+                            <button  class="right btn waves-effect waves-light" type="submit">Logout</button>
                    </form>
-
-                   </ul>
-                
-                          </div>
-                      </div>
-                      
-                    </div>
-
                   </div>
-
-                  
                </nav>
 
      @yield('content')
@@ -110,8 +98,6 @@
                     <!-- Compiled and minified JavaScript -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <script>
-
-     
 $(document).ready(function(){
  
   $('.sidenav').sidenav();
