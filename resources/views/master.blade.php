@@ -61,7 +61,7 @@
      <!-- all other page content -->
        <nav role="navigation" style="background-color: #B3E5FC">
                  <div class="nav-wrapper container" >
-                   <a id="logo-container" href="#" class="brand-logo">EPARS</a>
+                   <img id="logo-container" class="brand-logo" src="images/EPRAS-ICON.png">
                    <ul class="right ">
                   
                    <li><a  class='modal-trigger' href="#modal1">Login </a></li>
