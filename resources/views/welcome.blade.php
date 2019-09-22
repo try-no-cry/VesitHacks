@@ -1,27 +1,7 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-       
 
-        <title>EPARS</title>
- <!--Import Google Icon Font-->
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+@extends('master')
 
-    <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
-
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
- <!--Let browser know website is optimized for mobile-->
- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    </head>
-    <body>
+@section('content')
       <nav class="white" role="navigation">
                  <div class="nav-wrapper container">
                    <a id="logo-container" href="#" class="brand-logo">EPARS</a>
@@ -163,6 +143,7 @@
                  <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
                </div>
              
+<<<<<<< HEAD
                <footer class="page-footer teal">
                  <div class="container">
                    <div class="row">
@@ -198,24 +179,9 @@
                    </div>
                  </div>
                </footer>
+=======
+            
+>>>>>>> 38c5f01dfef53ac60b5e06da437c0507e8227813
              
-     <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- <script>
 
-     
-$(document).ready(function(){
- 
-  $('.sidenav').sidenav();
-  $('.parallax').parallax();
-  $('.dropdown-trigger').dropdown();
-  $('.modal').modal();
- 
-
-});
-     
-
-     </script>
- 
- </body>
-</html>
+@endsection
