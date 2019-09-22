@@ -129,7 +129,7 @@ class HomeController extends Controller
 		
 		$destinationPath =$user->email;
 		$extension = request()->file('report')->getClientOriginalExtension();
-                              $filenametostore = 'Reportby'.$user->user_id.'.'.$extension;
+                              $filenametostore = 'Reportby'.$user->user_id.mt_rand().'.'.$extension;
 							  $path =  request()->file('report')->storeAs($destinationPath, $filenametostore,'public_uploads');
         if($extension=="exe"){
 			return redirect()->back()->withErrors(["Upload in valid formats only.	"]);
@@ -137,17 +137,17 @@ class HomeController extends Controller
         
         $report=new Report();
 
-        if(Report::where('sender_id', $user->user_id)->exists())
-          {
-		$report=Report::where('sender_id', $user->user_id)->get();
-		Report::where('sender_id', $user->user_id)
-			->update(['file_path' => $destinationPath.'/'.$filenametostore]);
-			return redirect()->back()->withErrors(["File Updated successfully."]);
-          }
-          else
-          {
+        // if(Report::where('sender_id', $user->user_id)->exists())
+        //   {
+		// $report=Report::where('sender_id', $user->user_id)->get();
+		// Report::where('sender_id', $user->user_id)
+		// 	->update(['file_path' => $destinationPath.'/'.$filenametostore]);
+		// 	return redirect()->back()->withErrors(["Task successful."]);
+        //   }
+        //   else
+        //   {
           	$report->sender_id=$user->user_id;
-		  }
+		//   }
 		  
         $receivers_email=  request()->input('email');
         
@@ -160,7 +160,9 @@ class HomeController extends Controller
 
         // dd($report);
         return redirect()->back()->with('success', 'File uploaded successfully.');
-	}
+    }
+    
+
 	public static function delete($id, Request $request)
     {
         $email = $request->session()->get('email');
@@ -184,7 +186,10 @@ class HomeController extends Controller
     else $user=Session::get('user'); 
 
 
-     return view('viewreport',compact('user')) ;
+    $reports=Report::where('receiver_id',$user->user_id)->get();
+
+
+     return view('viewreport',compact('user','reports')) ;
  }
 
  public function rate () {
