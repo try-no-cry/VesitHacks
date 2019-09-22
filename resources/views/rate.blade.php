@@ -17,7 +17,7 @@
 @section('content')
     <ol>
         <div class="sh">
-            <li><a href="#"><span>ONE</span></a></li>
+            <li>ONE</li>
             <div class="h">
                 <form action="#">
                 <ul>
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="sh">
-            <li><a href="#"><span>ONE</span></a></li>
+           <li>TWO</li>
             <div class="h">
                 <form action="#">
                 <ul>
@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="sh">
-            <li><a href="#"><span>ONE</span></a></li>
+            <li>THREE</li>
             <div class="h">
                 <form action="#">
                 <ul>
