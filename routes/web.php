@@ -27,3 +27,6 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('profiledetails') ;
 });
+Route::get('/contact', function () {
+    return view('contact') ;
+});
