@@ -36,3 +36,4 @@ Route::get('/alert','HomeController@alert');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contact','HomeController@contact');

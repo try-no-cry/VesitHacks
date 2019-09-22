@@ -4,50 +4,7 @@
 @section('content')
 
 
-      
  
-      <nav class="white" role="navigation">
-                 <div class="nav-wrapper container">
-                   <a id="logo-container" href="#" class="brand-logo">EPARS</a>
-
-                   <ul class="right ">
-                     <li><a  class='modal-trigger' href="#modal1">Login </a></li>
-                     
-
-                   </ul>
-                  {{-- Login Modal --}}
-                   <div id="modal1" class="modal  grey lighten-2">
-                      <div class="modal-content">
-                        <h4 class="black-text">Login</h4>
-                        <div class="row">
-                            <form class="col s12">
-                              <div class="row">
-                               
-                                <div class="input-field col s12">
-                                  <input id="username" type="text" class="validate">
-                                  <label for="username">Username</label>
-                                </div>
-                              </div>
-                            
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input id="password" type="password" class="validate">
-                                  <label for="password">Password</label>
-                                </div>
-                              </div>
-                              <button class="btn waves-effect waves-light" type="submit" name="action">Login                            
-                              </button>
-                             
-                            </form>
-                          </div>
-                      </div>
-                      
-                    </div>
-
-                  </div>
-
-                  
-               </nav>
 
              
                <div id="index-banner" class="parallax-container">
