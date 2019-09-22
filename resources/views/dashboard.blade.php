@@ -1,5 +1,24 @@
 @extends('master')
 @section('content')
+
+<div id="index-banner" class="parallax-container">
+                 <div class="section no-pad-bot">
+                   <div class="container">
+                     <br><br>
+                     <h2 class="header center">Employee Performance And Rating System</h2>
+                      <br><br>
+                     <div class="row center">
+                       <h5 class="header col s12 light blwack-text">
+                        An efficient way to assess & track your employees  <br> and enhance your organisation's performance
+                      </h5>
+                     </div>
+                    
+                     <br><br>
+             
+                   </div>
+                 </div>
+                 <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
+               </div>
              
                <div class="container">
                  <div class="section">
@@ -27,7 +46,7 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                         <h5 class="center"><a href='/viewreport'>View recieved reports</a></h5>
+                         <h5 class="center"><a href='/viewreport'>View received reports</a></h5>
              
                          <p class="center light">View reports from your direct subordinates</p>
                        </div>
