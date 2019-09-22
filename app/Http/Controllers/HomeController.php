@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +25,12 @@ class HomeController extends Controller
   *
   * @return \Illuminate\Contracts\Support\Renderable
   */
+
+
+ public function checkSession(){
+       
+ }
+  
  public function index()
  {
      return view('home');
@@ -35,6 +41,8 @@ class HomeController extends Controller
  }
 
  public function contact(){
+     $user=User::all();
+     dd($user[0]->name);
      return view('contact');
  }
 
