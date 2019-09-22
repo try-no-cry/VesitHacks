@@ -20,30 +20,19 @@ Route::get('/register', function () {
     return view('register') ;
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard') ;
-});
+Route::get('/dashboard', 'HomeController@showdashboard');
 
-Route::get('/profile', function () {
-    return view('profiledetails') ;
-});
+Route::get('/profile','HomeController@profileDetails');
 
-Route::get('/sendreport', function () {
-    return view('sendreport') ;
-});
+Route::get('/sendreport','HomeController@sendReport');
 
-Route::get('/viewreport', function () {
-    return view('viewreport') ;
-});
+Route::get('/viewreport','HomeController@viewReport');
 
-Route::get('/rate', function () {
-    return view('rate') ;
-});
+Route::get('/rate','HomeController@rate');
 
-Route::get('/viewrate', function () {
-    return view('viewrate') ;
-});
+Route::get('/viewrate','HomeController@viewrate');
 
-Route::get('/alert', function () {
-    return view('alert') ;
-});
+Route::get('/alert','HomeController@alert');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
