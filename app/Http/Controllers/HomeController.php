@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use Session;
 use Illuminate\Http\Request;
 use DB;
 
@@ -62,8 +63,8 @@ class HomeController extends Controller
         $ans=true;
        if($ans==true)
             {
-                $_SESSION['user']=$user;
-                
+                // $_SESSION['user']=$user;
+                Session::put('user', $user);
                return view('dashboard',compact('user'));
             }
        else 
@@ -71,7 +72,7 @@ class HomeController extends Controller
  }
 
  public function logout(){
-     $_SESSION['user']=null;
+     Session::forget('user');
      return \redirect()->route('welcome');
  }
   
@@ -81,33 +82,54 @@ class HomeController extends Controller
  }
 
  public function showDashboard () {
-     return view('dashboard') ;
+    if(Session::get('user')==null)
+            return redirect()->route('welcome');
+     else $user=Session::get('user')->first();  
+
+     return view('dashboard',compact('user')) ;
  }
 
  public function contact(){
      $user=User::all();
-     dd($user);
+    //this can be visited by any guest user
      return view('contact');
  }
 
  public function profileDetails () {
-     return view('profiledetails') ;
+
+     if(Session::get('user')==null)
+            return redirect()->route('welcome');
+     else $user=Session::get('user')->first();    
+     
+     return view('profiledetails',compact('user')) ;
  }
 
  public function sendReport () {
-     return view('sendreport') ;
+    if(Session::get('user')==null)
+         return redirect()->route('welcome');
+    else $user=Session::get('user')->first();  
+     return view('sendreport',compact('user')) ;
  }
 
  public  function viewReport() {
-     return view('viewreport') ;
+    if(Session::get('user')==null)
+            return redirect()->route('welcome');
+    else $user=Session::get('user')->first(); 
+     return view('viewreport',compact('user')) ;
  }
 
  public function rate () {
-     return view('rate') ;
+    if(Session::get('user')==null)
+             return redirect()->route('welcome');
+    else $user=Session::get('user')->first(); 
+
+     return view('rate',compact('user')) ;
  }
 
 public function viewrate () {
-                
+    if(Session::get('user')==null)
+              return redirect()->route('welcome');
+    else $user=Session::get('user')->first(); 
 
             $review = DB::table('review')
             ->select(
@@ -137,12 +159,16 @@ public function viewrate () {
             }}
 
 
-            return view('viewrate')
+            return view('viewrate',compact('user'))
             ->with('review',json_encode($result));
  }
 
  function alert () {
-     return view('alert') ;
+    if(Session::get('user')==null)
+              return redirect()->route('welcome');
+    else $user=Session::get('user')->first(); 
+
+     return view('alert',compact('user'));
  }
    
 }
