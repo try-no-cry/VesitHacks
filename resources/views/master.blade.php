@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <style>
+            #page-footer {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+           }
+        </style>
         <meta charset="utf-8">
        
 
