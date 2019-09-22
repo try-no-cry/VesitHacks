@@ -13,7 +13,7 @@
         </style>
     </head>
 </html>
-@extends('master')
+@extends('app')
 @section('content')
     <ol>
         <div class="sh">

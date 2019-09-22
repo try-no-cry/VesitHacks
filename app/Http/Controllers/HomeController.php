@@ -64,7 +64,7 @@ class HomeController extends Controller
             {
                 $_SESSION['user']=$user;
                 
-               return view('welcome');
+               return view('dashboard',compact('user'));
             }
        else 
        return  back()->withErrors(['Wrong Credentials']);     
@@ -72,8 +72,7 @@ class HomeController extends Controller
 
  public function logout(){
      $_SESSION['user']=null;
-
-     return view('welcome');
+     return \redirect()->route('welcome');
  }
   
  public function index()

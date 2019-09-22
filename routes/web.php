@@ -13,12 +13,12 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 
 Route::post('/','HomeController@login')->name('login');
-Route::get('/logout','HomeController@logout')->name('logout');
+Route::post('/logout','HomeController@logout')->name('logout');
 
 
 Route::get('/dashboard', 'HomeController@showdashboard');
