@@ -59,7 +59,7 @@
  <div id="page-container">
    <div id="content-wrap">
      <!-- all other page content -->
-       <nav role="navigation" style="background-color: teal">
+       <nav role="navigation" style="background-color: #B3E5FC">
                  <div class="nav-wrapper container" >
                    <a id="logo-container" href="#" class="brand-logo">EPARS</a>
                    <ul class="right ">
@@ -70,7 +70,7 @@
                   {{-- Login Modal --}}
                    <div id="modal1" class="modal  grey lighten-2">
                       <div class="modal-content">
-                        <h4 class="black-text">Login</h4>
+                        <h4 class="black-text" style="text-color:white">Login</h4>
                         <div class="row">
                             <form  action="{{ route('login') }}" method="post" class="col s12">
                               @csrf
