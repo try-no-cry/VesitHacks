@@ -48,18 +48,19 @@
                       <div class="modal-content">
                         <h4 class="black-text">Login</h4>
                         <div class="row">
-                            <form class="col s12">
+                            <form  action="{{route('login') }}" method="POST" class="col s12">
+                              @csrf
                               <div class="row">
                                
                                 <div class="input-field col s12">
-                                  <input id="username" type="text" class="validate">
-                                  <label for="username">Username</label>
+                                  <input id="email" type="text" name="email" class="validate">
+                                  <label for="email">Email</label>
                                 </div>
                               </div>
                             
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input id="password" type="password" class="validate">
+                                  <input id="password" type="password" name="password"  class="validate">
                                   <label for="password">Password</label>
                                 </div>
                               </div>

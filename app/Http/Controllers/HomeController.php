@@ -27,8 +27,26 @@ class HomeController extends Controller
   */
 
 
- public function checkSession(){
-       
+ public function login(){
+     $email=request()->email;
+     $pwd=request()->password;
+
+       request()->validate([
+        'email' =>'email|required',
+        'password'=>'required'
+       ]);
+
+       $user=User::where('email',$email)->first();
+    //    $ans=Hash::check('password',$user->password);
+    $ans=false; 
+    if($user->email==$email && $user->password==$pwd)
+        $ans=true;
+       if($ans==true)
+            {
+                $_SESSION['user']=$user;
+                $dd($user);
+            }
+       else return  back()->withErrors(['Wrong Credentials']);     
  }
   
  public function index()
@@ -42,7 +60,7 @@ class HomeController extends Controller
 
  public function contact(){
      $user=User::all();
-     dd($user[0]->name);
+     dd($user);
      return view('contact');
  }
 

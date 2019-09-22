@@ -20,6 +20,8 @@ Route::get('/register', function () {
     return view('register') ;
 });
 
+Route::post('/login','HomeController@login')->name('login');
+
 Route::get('/dashboard', 'HomeController@showdashboard');
 
 Route::get('/profiledetails','HomeController@profileDetails');
