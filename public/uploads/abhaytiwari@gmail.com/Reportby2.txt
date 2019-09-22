@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+int partition(int list[],int left,int right,int pivot){
+    int temp;
+    while(left<right){
+        while(list[left]<=list[pivot])
+                left++;
+        while(list[right]>list[pivot])
+                right--;
+        if(left<right){
+            temp=list[left];
+            list[left]=list[right];
+            list[right]=temp;
+        }        
+        
+
+    }
+
+        temp=list[right];
+        list[right]=list[pivot];
+        list[pivot]=temp;
+        return right;
+
+}
+
+int qSelect(int list[],int left,int right,int k){
+    int pivot;
+    if(left==right)
+        return list[left];
+    pivot=(left+right)/2;
+
+    pivot=partition(list,left,right,pivot);
+    if(k==pivot+1)
+        return list[k];
+    else if(k<pivot+1)
+        return qSelect(list,left,pivot-1,k);
+    else  return qSelect(list,pivot+1,right,k);
+
+}
+
+// Complete the activityNotifications function below.
+int activityNotifications(int n, int* a, int d) {
+        int ans=0,num1,num2;
+        float avg=0;
+        int i,newList[d];
+        if(d>=n)
+            return 0;
+
+        for(i=0;i<d;i++){
+            newList[i]=a[i];
+        }
+
+        for(i=d;i<n;i++){
+                if(d%2==0){
+                    //even
+                    num1= qSelect(newList,i-d,i-1,(int)((float)d/2+0.5));
+                    num2= qSelect(newList,i-d,i-1,(int)((float)d/2+0.5)+1);
+                    avg=(float)(num1+num2)/2;
+                if(a[i]>=2*avg)
+                    ans++;
+                }
+                else{
+                avg= qSelect(newList,i-d,i-1,(int)((float)d/2+0.5));
+                    if(a[i]>=2*avg)
+                            ans++;
+                }
+
+                if(i<n-1){
+                    newList[0]=a[i];
+                }
+        }
+
+        return ans;
+
+}
+
+int main()
+{
+  int n,d,i;
+  scanf("%d %d",&n,&d);
+  int a[n];
+  
+  for(i=0;i<n;i++)  
+    scanf("%d",&a[i]);
+
+ printf("%d",activityNotifications(n,a,d)); 
+
+}

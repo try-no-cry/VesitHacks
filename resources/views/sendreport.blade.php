@@ -54,18 +54,19 @@ body {
 			</div>
 
 			<form class="contact100-form validate-form" action="" method="post" enctype="multipart/form-data">
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Full Name:</span>
-					<input class="input100" type="text" name="name" placeholder="Enter full name">
-					<span class="focus-input100"></span>
-				</div>
+				
 
 				<div class="wrap-input100 validate-input" data-validate = "ID is required">
-					<span class="label-input100">Employee ID:</span>
-					<input class="input100" type="text" name="email" placeholder="Enter your ID">
+					<span class="label-input100">Email of Receiver:</span>
+					<input class="input100" type="text" name="email" placeholder="Receiver's Email-ID">
 					<span class="focus-input100"></span>
 				</div>
 
+				<div class="wrap-input100 validate-input" data-validate="Title is required">
+					<span class="label-input100">Title:</span>
+					<input class="input100" type="text" name="title" placeholder="Enter title">
+					<span class="focus-input100"></span>
+				</div>
 				
 
 				<div class="wrap-input100 validate-input" data-validate = "Message is required">
@@ -85,7 +86,7 @@ body {
 					@endif
 					<p style="font-weight: bold; font-family: 'Bree Serif', serif; font-size: 200%; color: black;"></p>
 					&emsp;&emsp;&emsp;&emsp;&emsp;
-					<input type="file" name="resume" id="resume" class=""><br>
+					<input type="file" name="report" id="report" class=""><br>
 					<small style="color:red;"></small>
 					<br><br>
 					

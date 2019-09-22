@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Report;
 use Session;
 use Illuminate\Http\Request;
 use DB;
@@ -116,7 +117,65 @@ class HomeController extends Controller
  }
 
  public function sendReportWithFile(){
-     dd(request());
+     
+    if(Session::get('user')==null)
+        return redirect()->route('welcome');
+    else $user=Session::get('user'); 
+
+		if(request()->file('report')==null){
+			return redirect()->back()->withErrors(["No File Uploaded."]);
+		}
+		$email = $user->email;
+		
+		$destinationPath =$user->email;
+		$extension = request()->file('report')->getClientOriginalExtension();
+                              $filenametostore = 'Reportby'.$user->user_id.'.'.$extension;
+							  $path =  request()->file('report')->storeAs($destinationPath, $filenametostore,'public_uploads');
+        if($extension=="exe"){
+			return redirect()->back()->withErrors(["Upload in valid formats only.	"]);
+		}							  
+        
+        $report=new Report();
+
+        if(Report::where('sender_id', $user->user_id)->exists())
+          {
+		$report=Report::where('sender_id', $user->user_id)->get();
+		Report::where('sender_id', $user->user_id)
+			->update(['file_path' => $destinationPath.'/'.$filenametostore]);
+			return redirect()->back()->withErrors(["File Updated successfully."]);
+          }
+          else
+          {
+          	$report->sender_id=$user->user_id;
+		  }
+		  
+        $receivers_email=  request()->input('email');
+        
+        $rid=User::where('email',$receivers_email)->get();
+        $report->receiver_id=$rid[0]->user_id;
+        $report->title=request()->input('title');
+        $report->title=request()->input('message');
+        $report->file_path=$destinationPath.'/'.$filenametostore;
+        $report->save();
+
+        // dd($report);
+        return redirect()->back()->with('success', 'File uploaded successfully.');
+	}
+	public static function delete($id, Request $request)
+    {
+        $email = $request->session()->get('email');
+        $column_name1='is_'.$id;
+        $column_name2=$id.'_path';
+        $resume = new resume;
+        if(DB::table('resume')->where('email', $email)->exists())
+          {
+           DB::table('resume')->where('email', $email)->delete();
+           return redirect()->route('upload_resume');
+          }
+          else
+          {
+           return redirect()->route('upload_resume');
+          }
  }
 
  public  function viewReport() {
