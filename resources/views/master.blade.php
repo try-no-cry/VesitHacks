@@ -61,11 +61,10 @@
      <!-- all other page content -->
        <nav role="navigation" style="background-color: #B3E5FC">
                  <div class="nav-wrapper container" >
-                   <img id="logo-container" src="images/EPRAS-ICON.png" class="brand-logo">
-
+                   <a id="logo-container" href="#" class="brand-logo">EPARS</a>
                    <ul class="right ">
-                     <li><a  class='modal-trigger' href="#modal1">Login </a></li>
-                     
+                  
+                   <li><a  class='modal-trigger' href="#modal1">Login </a></li>
 
                    </ul>
                   {{-- Login Modal --}}
@@ -73,22 +72,23 @@
                       <div class="modal-content">
                         <h4 class="black-text" style="text-color:white">Login</h4>
                         <div class="row">
-                            <form class="col s12">
+                            <form  action="{{ route('login') }}" method="post" class="col s12">
+                              @csrf
                               <div class="row">
                                
                                 <div class="input-field col s12">
-                                  <input id="username" type="text" class="validate">
-                                  <label for="username">Username</label>
+                                  <input id="email" type="text" name="email" class="validate">
+                                  <label for="email">Email</label>
                                 </div>
                               </div>
                             
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input id="password" type="password" class="validate">
+                                  <input id="password" type="password" name="password"  class="validate">
                                   <label for="password">Password</label>
                                 </div>
                               </div>
-                              <button class="btn waves-effect waves-light" type="submit" name="action">Login                            
+                              <button class="btn waves-effect waves-light" type="submit" name="login">Login                            
                               </button>
                              
                             </form>

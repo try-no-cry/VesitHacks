@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register', function () {
-      
-    return view('register') ;
-});
+
+
+Route::post('/','HomeController@login')->name('login');
+Route::get('/logout','HomeController@logout')->name('logout');
+
 
 Route::get('/dashboard', 'HomeController@showdashboard');
 
@@ -33,7 +34,4 @@ Route::get('/rate','HomeController@rate');
 Route::get('/viewrate','HomeController@viewrate');
 
 Route::get('/alert','HomeController@alert');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact','HomeController@contact');
