@@ -1,13 +1,15 @@
 <html>
     <head>
         <style>
-            ul {
+            .h {
                 display:none;
             }
-            div:hover ul{
+            .sh:hover .h{
                 display: block;
+            }    
+            li {
+                width: 65%;
             }
-            
         </style>
     </head>
 </html>
@@ -16,27 +18,45 @@
     <ol>
         <div class="sh">
             <li><a href="#"><span>ONE</span></a></li>
-            <ul>
-                <li><input type="text" placeholder="one"></li>
-                <li><input type="text" placeholder="one"></li>
-                <li><input type="text" placeholder="one"></li>
-            </ul>
+            <div class="h">
+                <form action="#">
+                <ul>
+                    <li><input type="number" placeholder="Punctuality(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Targets acchived(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Behaviour(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Contribution(0-10)" min="0" max="10" required></li>
+                </ul>
+                <input type="submit" value="Submit">
+            </form>
+            </div>
         </div>
         <div class="sh">
             <li><a href="#"><span>ONE</span></a></li>
-            <ul>
-                <li><input type="text" placeholder="one"></li>
-                <li><input type="text" placeholder="one"></li>
-                <li><input type="text" placeholder="one"></li>
-            </ul>
+            <div class="h">
+                <form action="#">
+                <ul>
+                    <li><input type="number" placeholder="Punctuality(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Targets acchived(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Behaviour(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Contribution(0-10)" min="0" max="10" required></li>
+                </ul>
+                <input type="submit" value="Submit">
+            </form>
+            </div>
         </div>
         <div class="sh">
             <li><a href="#"><span>ONE</span></a></li>
-            <ul>
-                <li><input type="text" placeholder="one"></li>
-                <li><input type="text" placeholder="one"></li>
-                <li><input type="text" placeholder="one"></li>
-            </ul>
+            <div class="h">
+                <form action="#">
+                <ul>
+                    <li><input type="number" placeholder="Punctuality(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Targets acchived(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Behaviour(0-10)" min="0" max="10" required></li>
+                    <li><input type="number" placeholder="Contribution(0-10)" min="0" max="10" required></li>
+                </ul>
+                <input type="submit" value="Submit">
+            </form>
+            </div>
         </div>
     </ol>
 @endsection
