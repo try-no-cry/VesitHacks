@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2019 at 12:01 PM
+-- Generation Time: Sep 22, 2019 at 12:33 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `completed_projects` (
-  `project_id` int(11) NOT NULL,
+  `project_id` int(11) NOT NULL AUTO_INCREMENT,
   `project_name` varchar(255) NOT NULL,
   `project_status` varchar(255) NOT NULL,
   `project_manager_id` int(11) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `completed_projects` (
 --
 
 CREATE TABLE `current_project` (
-  `proj_id` int(11) NOT NULL,
+  `proj_id` int(11) NOT NULL AUTO_INCREMENT,
   `proj_manager_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `task_name` varchar(255) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `current_project` (
 --
 
 CREATE TABLE `manager_team` (
-  `team_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL AUTO_INCREMENT,
   `manager_id` int(11) NOT NULL,
   `member_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -72,7 +72,7 @@ CREATE TABLE `manager_team` (
 --
 
 CREATE TABLE `review` (
-  `review_id` int(11) NOT NULL,
+  `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `r_for_id` int(11) NOT NULL,
   `r_by_id` int(11) NOT NULL,
   `puctuality` int(11) NOT NULL,
@@ -88,15 +88,16 @@ CREATE TABLE `review` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `contact` int(11) NOT NULL,
+  `contact` varchar(10) NOT NULL,
   `current_project_id` int(11) NOT NULL,
   `salary` int(11) NOT NULL,
-  `projects_done` varchar(255) NOT NULL
+  `projects_done` int(11) NOT NULL,
+  `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
