@@ -22,6 +22,30 @@
 
     </head>
     <body>
+    <nav class="white" role="navigation">
+                 <div class="nav-wrapper container">
+                   <a id="logo-container" href="#" class="brand-logo">EPARS</a>
+                 </div>
+      </nav>
+
+             
+               <div id="index-banner" class="parallax-container">
+                 <div class="section no-pad-bot">
+                   <div class="container">
+                     <br><br>
+                     <h2 class="header center light cyan-text lighten-5">Employee Performance<br> And Rating System</h2>
+                      <br><br>
+                     <div class="row center">
+                       <h5 class="header col s12 light blwack-text">
+                        An efficient way to assess & track your employees<br> and enhance your organisation's performance
+                      </h5>
+                     </div>
+                     <br><br>
+             
+                   </div>
+                 </div>
+                 <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
+               </div>
 
      @yield('content')
 
