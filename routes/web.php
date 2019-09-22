@@ -27,6 +27,28 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('profiledetails') ;
 });
+<<<<<<< HEAD
 Route::get('/contact', function () {
     return view('contact') ;
+=======
+
+Route::get('/sendreport', function () {
+    return view('sendreport') ;
+});
+
+Route::get('/viewreport', function () {
+    return view('viewreport') ;
+});
+
+Route::get('/rate', function () {
+    return view('rate') ;
+});
+
+Route::get('/viewrate', function () {
+    return view('viewrate') ;
+});
+
+Route::get('/alert', function () {
+    return view('alert') ;
+>>>>>>> 2c7f30009840cdd4c4a4aa0825151610e3362003
 });

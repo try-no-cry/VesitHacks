@@ -61,4 +61,7 @@
  footer.page-footer {
    margin: 0;
  }
+ #tableformat{
+   border-collapse: collapse;
+ }
  
