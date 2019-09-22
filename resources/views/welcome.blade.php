@@ -54,7 +54,7 @@
                  <div class="section no-pad-bot">
                    <div class="container">
                      <br><br>
-                     <h2 class="header center">Employee Performance And Rating System</h1>
+                     <h2 class="header center">Employee Performance And Rating System</h2>
                       <br><br>
                      <div class="row center">
                        <h5 class="header col s12 light blwack-text">
@@ -127,7 +127,7 @@
                      <div class="col s12 center">
                        <h3><i class="mdi-content-send brown-text"></i></h3>
                        <p class="center">For any further doubts and queries </p>
-                       <h4>Contact Us</h4>
+                       <a href="{{ url('/contact') }}"><h4>Contact Us</h4></a>
                       
                      </div>
                    </div>
