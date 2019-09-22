@@ -29,7 +29,7 @@ Route::get('/profile', function () {
 });
 Route::get('/contact', function () {
     return view('contact') ;
-
+});
 Route::get('/sendreport', function () {
     return view('sendreport') ;
 });
