@@ -33,7 +33,7 @@
 </head>
 <style>
 body {
-  background-color: #590C0C;
+  background-color: #ECEDF1;
 }
 </style>
 <body>
@@ -71,8 +71,34 @@ body {
 					<span class="focus-input100"></span>
 				</div>
         <div class="wrap-input100 validate-input" data-validate = "ID is required">
-					<span class="label-input100">Current Projects:</span>
+					<span class="label-input100">Current Project:</span>
 					<span class="label">{{ $user->current_project_id }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Contact Number:</span>
+					<span class="label">{{ $user->contact }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+			
+
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Address:</span>
+					<span class="label">{{ $user->address }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Salary:</span>
+					<span class="label">{{ $user->salary }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Role:</span>
+					<span class="label">{{ $user->role }} </span>
 					<span class="focus-input100"></span>
 				</div>
 
