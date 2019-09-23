@@ -1,6 +1,7 @@
-@extends('master')
+@extends('layouts.app')
 @section('content')
-<div class="row container">
+<div class="row container" >
+    <div class="container">
                   <h1>Registration Form</h1>
                     <form class="col s12" action="{{ route('register') }}" method="post">
                       <div class="row">
@@ -61,5 +62,5 @@
                     </button>
                     </form>
                   </div>  
-
+</div>
 @endsection

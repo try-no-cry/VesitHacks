@@ -68,6 +68,11 @@ class HomeController extends Controller
             {
                 // $_SESSION['user']=$user;
                 Session::put('user', $user);
+                
+                if($user->name=='ADMIN')
+                {
+                    return view('adb');
+                }
                
                return view('dashboard',compact('user'));
             }
@@ -96,10 +101,8 @@ public function doRegister(){
      ]);
    $user= User::create($data);
 
-       Session::put('user', $user);
-
     
-  return view('dashboard',compact('user'));
+  return view('adb');
 }    
   
  public function register()
@@ -125,6 +128,20 @@ public function doRegister(){
 
      return view('dashboard',compact('user')) ;
  }
+    
+    public function showadbDashboard () {
+     
+    
+    if(Session::get('user')==null){
+
+        return redirect()->route('welcome');
+    }
+           
+     else $user=Session::get('user');  
+
+     return view('adb',compact('user')) ;
+ }
+    
 
  public function contact(){
      $user=User::all();
@@ -345,6 +362,14 @@ public function viewrate () {
 
 
  }
+    public function deleteuser()
+    {
+        if(Session::get('user')==null)
+              return redirect()->route('welcome');
+    else $user=Session::get('user'); 
+
+     return view('delete');
+    }
    
 }
 

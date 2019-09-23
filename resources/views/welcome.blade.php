@@ -18,9 +18,6 @@
                         An efficient way to assess & track your employees  <br> and enhance your organisation's performance
                       </h5>
                     </div>
-                     <div class="row center">
-                       <a href="{{ url('/register') }}" id="download-button" class="btn-large waves-effect waves-light lighten-1" style="background-color: #B3E5FC;text-color: #000000">Register Now</a>
-                     </div>
                      <br><br>
              
                    </div>
