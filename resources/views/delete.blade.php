@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app3')
 @section('content')
 <div class="container">
 <h3 style="color:rgb(10,10,245);"> <u><center> REMOVE EMPLOYEES</center></u></h3>
