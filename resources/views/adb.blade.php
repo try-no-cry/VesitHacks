@@ -29,7 +29,7 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                         <h5 class="center"><a href='/viewreport'>Modify</a></h5>
+                         <h5 class="center"><a href="{{ url('/modify') }}">Modify</a></h5>
              
                          <p class="center light">Modify details of a member</p>
                        </div>
