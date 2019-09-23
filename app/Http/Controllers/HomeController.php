@@ -45,6 +45,9 @@ class HomeController extends Controller
        ]);
 
        $user=User::where('email',$email)->first();
+       if($user==null)
+               return  back()->withErrors(['Wrong Credentials']);
+
     //    $ans=Hash::check('password',$user->password);
     $ans=false; 
     if($user->email==$email && $user->password==$pwd)
