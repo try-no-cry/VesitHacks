@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 
 <ul>
-<?php dd($reports); ?>
+<!--?php dd($reports); ?-->
 @foreach($reports as $report)
 
 <li>

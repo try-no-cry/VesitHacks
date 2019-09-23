@@ -59,52 +59,41 @@
  <div id="page-container">
    <div id="content-wrap">
      <!-- all other page content -->
-       <nav role="navigation" style="background-color: #B3E5FC">
-                 <div class="nav-wrapper container" >
-                   <img id="logo-container" class="brand-logo" src="images/EPRAS-ICON.png">
-                   <ul class="right ">
-                  
-                   <li><a  class='modal-trigger' href="#modal1">Login </a></li>
 
-                   </ul>
-                  {{-- Login Modal --}}
-                   <div id="modal1" class="modal  grey lighten-2">
-                      <div class="modal-content">
-                        <h4 class="black-text" style="text-color:white">Login</h4>
-                        <div class="row">
-                            <form  action="{{ route('login') }}" method="post" class="col s12">
-                              @csrf
-                              <div class="row">
-                               
-                                <div class="input-field col s12">
-                                  <input id="email" type="text" name="email" class="validate">
-                                  <label for="email">Email</label>
-                                </div>
-                              </div>
-                            
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input id="password" type="password" name="password"  class="validate">
-                                  <label for="password">Password</label>
-                                </div>
-                              </div>
-                              <button class="btn waves-effect waves-light" type="submit" name="login">Login                            
-                              </button>
-                             
-                            </form>
-                          </div>
-                      </div>
-                      
-                    </div>
 
-                  </div>
 
-                  
-               </nav>
+     
+    
+
+  <nav role="navigation" style="background-color: #B3E5FC; ">
+  <div class="nav-wrapper container">
+  
+        <img id="logo-container " class="brand-logo" src="images/EPRAS-ICON.png">
+      
+        <ul id="nav-mobile" class="right" >
+        <li href="#" data-target="mobile-demo" class="sidenav-trigger blue-text darker-4"><i class="material-icons">menu</i></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{{ url('/profiledetails') }}">View Profile</a></li>
+    <li><a href="{{ url('/sendreport') }}">Send Reports</a></li>
+    <li><a href="{{ url('/viewreport') }}">View Report</a></li>
+    <li><a href="{{ url('/rate') }}">Rate Subordinates</a></li>
+    <li><a href="{{ url('/viewrate') }}">View Ratings</a></li>
+    <li><a href="{{ url('/alert') }}">Alert Incharge</a></li>
+
+    <form action="{{ url('/logout') }}" method="post" style="margin-left:10px;">
+                   @csrf
+                            <li><button  class="center btn waves-effect waves-light" style="background-color:#3F51B5" type="submit">Logout</button></li>
+                   </form>
+  </ul>
 
      @yield('content')
    </div>
-   <footer class="page-footer" style="background-color: #6FA8DC;">
+   <footer class="page-footer" style="background-color:#3F51B5">
                  <div class="container">
                    <div class="row">
                      <div class="col l6 s12">
@@ -115,7 +104,7 @@
                      </div>
               
                 
-                     <div class="col l6 s12" style="color: #B3E5FC;">
+                     <div class="col l6 s12">
                        <h5 class="white-text">Connect</h5>
                        <ul>
                          <li><a class="white-text" href="#!">Link 1</a></li>
@@ -131,8 +120,6 @@
                     <!-- Compiled and minified JavaScript -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <script>
-
-     
 $(document).ready(function(){
  
   $('.sidenav').sidenav();
