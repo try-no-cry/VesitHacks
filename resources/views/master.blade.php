@@ -104,7 +104,7 @@
 
      @yield('content')
    </div>
-   <footer class="page-footer" style="background-color:#3F51B5">
+   <footer class="page-footer" style="background-color: #6FA8DC;">
                  <div class="container">
                    <div class="row">
                      <div class="col l6 s12">
@@ -115,7 +115,7 @@
                      </div>
               
                 
-                     <div class="col l6 s12">
+                     <div class="col l6 s12" style="color: #B3E5FC;">
                        <h5 class="white-text">Connect</h5>
                        <ul>
                          <li><a class="white-text" href="#!">Link 1</a></li>

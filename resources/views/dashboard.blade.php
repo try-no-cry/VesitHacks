@@ -1,25 +1,11 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
 
-<div id="index-banner" class="parallax-container">
-                 <div class="section no-pad-bot">
-                   <div class="container">
-                     <br><br>
-                     <h2 class="header center">Employee Performance And Rating System</h2>
-                      <br><br>
-                     <div class="row center">
-                       <h5 class="header col s12 light blwack-text">
-                        An efficient way to assess & track your employees  <br> and enhance your organisation's performance
-                      </h5>
-                     </div>
-                    
-                     <br><br>
-             
-                   </div>
-                 </div>
-                 <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
-               </div>
+
+
+<div class="container">
+                <h1 class="center">Dashboard</h1>
              
                <div class="container">
                  <div class="section">
@@ -36,7 +22,7 @@
              
                      <div class="col s12 m4">
                        <div class="icon-block">
-                         <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                         <h2 class="center brown-text"><i class="material-icons">cloud_upload</i></h2>
                          <a href="{{ url('/sendreport') }}"><h5 class="center">Send reports</h5></a>
              
                          <p class="center light">Send new report to your direct supervisor</p>
@@ -45,7 +31,7 @@
                        
                      <div class="col s12 m4">
                        <div class="icon-block">
-                         <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                         <h2 class="center brown-text"><i class="material-icons">dns</i></h2>
                          <h5 class="center"><a href='/viewreport'>View received reports</a></h5>
              
                          <p class="center light">View reports from your direct subordinates</p>
@@ -63,7 +49,7 @@
                        
                      <div class="col s12 m4">
                        <div class="icon-block">
-                         <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                         <h2 class="center brown-text"><i class="material-icons">assessment</i></h2>
                          <h5 class="center"><a href='/viewrate'>View ratings</a></h5>
              
                          <p class="center light">Display ratings of your direct subordinates</p>

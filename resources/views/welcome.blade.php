@@ -37,18 +37,18 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                         <h5 class="center">Speeds up development</h5>
+                         <h5 class="center">Quick And Efficient</h5>
              
-                         <p class="light">We track the performance of every employee and manage their employee profiles.<p>
+                         <p class=" center light">View, track and assess records<br> of all employees, <br>all at your fingertips<p>
                        </div>
                      </div>
              
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                         <h5 class="center">User Experience Focused</h5>
+                         <h5 class="center">User Friendly</h5>
              
-                         <p class="light">Easy to manage and keep track of current and completed projects</p>
+                         <p class="center light">Easy to manage and keep track<br> of current and completed projects<br> and make changes to existing users </p>
                        </div>
                      </div>
              
@@ -57,7 +57,7 @@
                          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
                          <h5 class="center">Easy to work with</h5>
              
-                         <p class="light">Statistics are displayed based on Employee's performance based on a scale 1-10 considering various reviews.</p>
+                         <p class="center light">Statistics are displayed and rated based<br> on Employee's performance based <br>on a scale 1-10 considering various reviews.</p>
                        </div>
                      </div>
                    </div>
@@ -86,6 +86,34 @@
                        <p class="center">For any further doubts and queries </p>
                        <a href="{{ url('/contact') }}"><h4>Contact Us</h4></a>
                       
+                     </div>
+                   </div>
+                   <div class="row">
+                     <div class="col s12 m4">
+                       <div class="icon-block">
+                         <h2 class="center brown-text"><i class="material-icons">email</i></h2>
+                         <h5 class="center">Email Us</h5>
+             
+                         <p class=" center light"> info@epars.in</p>
+                       </div>
+                     </div>
+             
+                     <div class="col s12 m4">
+                       <div class="icon-block">
+                         <h2 class="center brown-text"><i class="material-icons">local_phone</i></h2>
+                         <h5 class="center">Call  Us</h5>
+             
+                         <p class="center light">+91-9876543210<br>+91-8976543210</p>
+                       </div>
+                     </div>
+             
+                     <div class="col s12 m4">
+                       <div class="icon-block">
+                         <h2 class="center brown-text"><i class="material-icons">navigation</i></h2>
+                         <h5 class="center">Locate Us</h5>
+             
+                         <p class="center light">123, ABC IT Park,<br> Goregaon (E.), Mumbai-400097</p>
+                       </div>
                      </div>
                    </div>
              
