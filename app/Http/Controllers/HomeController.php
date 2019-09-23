@@ -65,8 +65,8 @@ class HomeController extends Controller
        return  back()->withErrors(['Wrong Credentials']);     
  }
 
-    public function modify()
-    {
+    public function modify(){
+    
         $data=request()->validate(
      [
          "user_id"=>'required',
@@ -85,27 +85,6 @@ class HomeController extends Controller
         
         
         
-        $review = DB::table('users')
-            ->select(
-                DB::raw("name as name")
-                )
-            ->orderBy("id")
-            // ->groupBy(DB::raw("id"))
-            ->get();
-
-            //dd($review, $user);
-
-            $result[] = ['Name','Punctuality','Behaviour','Targets','Contribution'];
-            foreach ($review as $key => $value) {
-                foreach($user as $key2 => $value2)
-                {if($value2->id == $value->id){
-            $result[++$key] = [$value2->name,   (int)$value->punc, (int)$value->bhvr, (int)$value->targ, (int)$value->cntrb];}
-            // dd($result, $visitor);
-            }}
-
-
-            return view('viewrate',compact('user'))
-            ->with('review',json_encode($result));
     }
    
     
@@ -454,8 +433,36 @@ public function viewrate () {
     else $user=Session::get('user'); 
      
         $udata = User::all();
-     return view('modify',compact('udata'));
-    }
+        
+        
+        
+        
+        
+        
+        $review = DB::table('users')
+            ->select(
+                DB::raw("name as name")
+                )
+            ->orderBy("name")
+            // ->groupBy(DB::raw("id"))
+            ->get();
+
+            //dd($review, $user);
+
+            $result[] = ['Name','Punctuality','Behaviour','Targets','Contribution'];
+            foreach ($review as $key => $value) {
+                
+             
+            $result[++$key] = [$value->name];}
+            // dd($result, $visitor);
+         return view('modify',compact('udata','user'))->with('review',json_encode($result));
+            }
+
+
+           // return view('viewrate',compact('user'))
+            
+    
+    
 }
 
 
