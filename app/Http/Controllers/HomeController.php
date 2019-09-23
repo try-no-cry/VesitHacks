@@ -166,8 +166,6 @@ function alertMessage(){
 } 
 
 
-
-    
   
  public function register()
  {
@@ -458,7 +456,6 @@ public function viewrate () {
         $udata = User::all();
      return view('modify',compact('udata'));
     }
-
 }
 
 
