@@ -94,7 +94,7 @@
                          <h2 class="center brown-text"><i class="material-icons">email</i></h2>
                          <h5 class="center">Email Us</h5>
              
-                         <p class=" center light"> <br> info@epars.in</p>
+                         <p class=" center light"> info@epars.in</p>
                        </div>
                      </div>
              
@@ -103,7 +103,7 @@
                          <h2 class="center brown-text"><i class="material-icons">local_phone</i></h2>
                          <h5 class="center">Call  Us</h5>
              
-                         <p class="center light">+91-9876543210<br><br>+91-8976543210</p>
+                         <p class="center light">+91-9876543210<br>+91-8976543210</p>
                        </div>
                      </div>
              
@@ -112,7 +112,7 @@
                          <h2 class="center brown-text"><i class="material-icons">navigation</i></h2>
                          <h5 class="center">Locate Us</h5>
              
-                         <p class="center light">123, ABC Park,<br>DEF Lane, Goregaon (E.)<br>Mumbai-400097</p>
+                         <p class="center light">123, ABC IT Park,<br> Goregaon (E.), Mumbai-400097</p>
                        </div>
                      </div>
                    </div>
