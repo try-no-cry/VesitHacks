@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <style>
             input[type="radio"]{
@@ -6,8 +6,8 @@
         }
         </style>
     </head>
-</html>
-@extends('app')
+</html> -->
+@extends('layouts.app')
 
 @section('content')
 

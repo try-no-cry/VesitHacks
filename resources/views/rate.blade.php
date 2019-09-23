@@ -13,7 +13,7 @@
         </style>
     </head>
 </html>
-@extends('app')
+@extends('layouts.app')
 @section('content')
     <ol>
     <!-- $key = array_search('green', $array); // $key = 2;
