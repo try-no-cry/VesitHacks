@@ -1,11 +1,80 @@
 @extends('layouts.app')
 @section('content')
+
+
+
+    
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      var review = <?php echo $review; ?>;
+
+      console.log(review);
+
+      google.charts.load('current', {'packages':['corechart', 'controls']});
+
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'StringFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': 'Name',
+            'ui': {'labelStacking': 'horizontal' }
+          }
+        });
+
+
+        var programmaticChart  = new google.visualization.ChartWrapper({
+          'chartType': 'TableChart',
+          'containerId': 'programmatic_chart_div',
+          'options': {
+            'title': 'Employee Ratings',
+            'width': 900,
+            'height': 500,
+            'legend': 'none',
+            'chartArea': {'left': 50, 'top': 30, 'right': 30, 'bottom': 30},
+            'pieSliceText': 'value'
+          },
+          'responsive':true
+        });
+
+
+
+
+        var data = google.visualization.arrayToDataTable(review);
+
+        var options = {
+          title: 'Empolyee Performance',
+          curveType: 'function',          
+          animation: {startup:true, duration:3000, easing: 'inAndOut'},
+          legend: { position: 'bottom' }
+        };
+
+
+        
+        dashboard.bind(programmaticSlider, programmaticChart);
+        dashboard.draw(data);
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('linechart'));
+        chart.draw(data, options);
+      }
+    </script>
+
         @foreach($udata as $d)
                 <ul class="container ">
                 
                    <li><a  class='modal-trigger' href="#modal1/{{$d->name}}">{{$d->name}} </a></li>
                     
                    </ul>
+
 
         <div id="modal1/{{$d->name}}" class="modal  grey lighten-2">
                       <div class="modal-content">

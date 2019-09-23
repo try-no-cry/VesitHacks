@@ -1,8 +1,11 @@
 
 @extends('layouts.app2')
 @section('content')
-
-    <ul  class="collapsible container center margin-left:200px">
+<!--<h3>RATE SUBORDINATES</h3>-->
+<div class="container"> 
+    <h3 CLASS="center">RATE SUBORDINATES</h3>
+    
+    <ul  class="collapsible  " style="margin-left:100px">
     <!-- $key = array_search('green', $array); // $key = 2;
  -->
        <!-- index of each name repesents its id -->
@@ -44,6 +47,8 @@
     @endforeach
 
     </ul>
+    
+    </div> 
     
     <script>
         $(document).ready(function(){

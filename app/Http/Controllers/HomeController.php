@@ -84,6 +84,31 @@ class HomeController extends Controller
      ]);
         User::where('user_id',$data["user_id"])->update($data);
         return view('adb');
+        
+        
+        
+        
+        $review = DB::table('users')
+            ->select(
+                DB::raw("name as name")
+                )
+            ->orderBy("id")
+            // ->groupBy(DB::raw("id"))
+            ->get();
+
+            //dd($review, $user);
+
+            $result[] = ['Name','Punctuality','Behaviour','Targets','Contribution'];
+            foreach ($review as $key => $value) {
+                foreach($user as $key2 => $value2)
+                {if($value2->id == $value->id){
+            $result[++$key] = [$value2->name,   (int)$value->punc, (int)$value->bhvr, (int)$value->targ, (int)$value->cntrb];}
+            // dd($result, $visitor);
+            }}
+
+
+            return view('viewrate',compact('user'))
+            ->with('review',json_encode($result));
     }
    
     
@@ -144,8 +169,6 @@ function alertMessage(){
 } 
 
 
-
-    
   
  public function register()
  {
@@ -436,8 +459,6 @@ public function viewrate () {
         $udata = User::all();
      return view('modify',compact('udata'));
     }
-   
-
 }
 
 
