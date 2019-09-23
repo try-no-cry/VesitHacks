@@ -108,7 +108,6 @@ public function doRegister(){
    $user= User::create($data);
 
     
-<<<<<<< HEAD
   return view('dashboard',compact('user'));
 }   
 
@@ -142,10 +141,6 @@ function alertMessage(){
 } 
 
 
-=======
-  return view('adb');
-}    
->>>>>>> 1042d8930c29df2db2e1965154e16388dea5775b
   
  public function register()
  {
@@ -426,7 +421,6 @@ public function viewrate () {
     $users=User::all();
      return view('delete',compact('users'));
     }
-<<<<<<< HEAD
     
     public function modifyuser()
     {
@@ -438,9 +432,6 @@ public function viewrate () {
      return view('modify',compact('udata'));
     }
    
-=======
-
->>>>>>> 1042d8930c29df2db2e1965154e16388dea5775b
 }
 
 
