@@ -227,6 +227,18 @@ public function doRegister(){
           {
            return redirect()->route('upload_resume');
           }
+         
+          
+        
+
+         
+
+ }
+
+ public function deleteAUser($user){
+     $u=User::find($user);
+     $u->delete();
+     return back();
  }
 
  public  function viewReport() {
@@ -362,15 +374,17 @@ public function viewrate () {
 
 
  }
+
     public function deleteuser()
     {
         if(Session::get('user')==null)
               return redirect()->route('welcome');
     else $user=Session::get('user'); 
 
-     return view('delete');
+    $users=User::all();
+     return view('delete',compact('users'));
     }
-   
+
 }
 
 
