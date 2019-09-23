@@ -94,9 +94,12 @@ public function doRegister(){
          "salary" => 'required',
          'projects_done'=>'required'
      ]);
-     User::create($data);
-     return back()->withErrors(["Registration Successful"]);
+   $user= User::create($data);
 
+       Session::put('user', $user);
+
+    
+  return view('dashboard',compact('user'));
 }    
   
  public function register()

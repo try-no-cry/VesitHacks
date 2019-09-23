@@ -19,7 +19,7 @@
                       </h5>
                      </div>
                      <div class="row center">
-                       <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                       <a href="/register" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Register</a>
                      </div>
                      <br><br>
              
