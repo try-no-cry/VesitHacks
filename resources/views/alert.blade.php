@@ -61,23 +61,32 @@ body {
 				
 				</span>
 			</div>
+			@if($errors->any())
+			
+			<ul>
 
-			<form class="contact100-form validate-form">
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Full Name:</span>
-					<input class="input100" type="text" name="name" placeholder="Enter full name">
+		<center>	<LI style="color:red;">{{$errors->first() }}</LI></center>
+				
+			</ul>	
+			@endif
+
+			<form class="contact100-form validate-form" action="{{route('alertMessage')}}" method="post" >
+				<div class="wrap-input100 validate-input" data-validate="send to">
+				@csrf
+					<span class="label-input100">Receiver's E-Mail:</span>
+					<input class="input100" type="text" name="email" placeholder="Enter EMail">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "ID is required">
-					<span class="label-input100">Employee ID:</span>
-					<input class="input100" type="text" name="email" placeholder="Enter your ID">
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100">Message:</span>
+					<input class="input100" type="text" name="message" placeholder="Enter your Message">
 					<span class="focus-input100"></span>
 				</div>
                 
                 <div class="wrap-input100 validate-input" data-validate = "Option is required">
                     <span class="label-input100">Performance:</span>
-                    <select class="input100">
+                    <select class="input100" name="perf">
                         <option value="high">High Performer</option>
                         <option value="low">Low Performer</option>
                     </select>
@@ -86,7 +95,7 @@ body {
             
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button class="contact100-form-btn" type="submit">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

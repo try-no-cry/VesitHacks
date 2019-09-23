@@ -16,6 +16,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 
+Route::post('/alertMessage','HomeController@alertMessage')->name('alertMessage');
+
 
 Route::post('/','HomeController@login')->name('login');
 Route::post('/logout','HomeController@logout')->name('logout');
