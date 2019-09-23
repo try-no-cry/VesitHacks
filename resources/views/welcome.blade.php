@@ -19,7 +19,7 @@
                       </h5>
                      </div>
                      <div class="row center">
-                       <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                       <a href="{{ url('/register') }}" id="download-button" class="btn-large waves-effect waves-light lighten-1" style="background-color: #B3E5FC;text-color: #000000">Register Now</a>
                      </div>
                      <br><br>
              
