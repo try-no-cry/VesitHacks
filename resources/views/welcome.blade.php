@@ -3,9 +3,6 @@
 
 @section('content')
 
-
- 
-
              
                <div id="index-banner" class="parallax-container">
                  <div class="section no-pad-bot">
@@ -18,6 +15,12 @@
                         An efficient way to assess & track your employees  <br> and enhance your organisation's performance
                       </h5>
                     </div>
+<<<<<<< HEAD
+=======
+                     <div class="row center">
+                       <a href="{{ url('/register') }}" id="download-button" class="btn-large waves-effect waves-light lighten-1 black-text" style="background-color: #B3E5FC;">Register Now</a>
+                     </div>
+>>>>>>> d825cbf24dfe60e9527a21011e08098ebcb83a68
                      <br><br>
              
                    </div>

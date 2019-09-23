@@ -17,7 +17,9 @@
               width: 100%;
               height: 15rem;            /* Footer height */
             }
-
+            .sidenav-trigger:hover{
+                cursor:pointer;
+            }
         </style>
         <meta charset="utf-8">
        
