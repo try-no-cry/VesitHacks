@@ -183,6 +183,7 @@ class HomeController extends Controller
  }
 
  public  function viewReport() {
+     
     if(Session::get('user')==null)
             return redirect()->route('welcome');
     else $user=Session::get('user'); 
