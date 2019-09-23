@@ -3,9 +3,6 @@
 
 @section('content')
 
-
- 
-
              
                <div id="index-banner" class="parallax-container">
                  <div class="section no-pad-bot">
@@ -19,7 +16,7 @@
                       </h5>
                     </div>
                      <div class="row center">
-                       <a href="{{ url('/register') }}" id="download-button" class="btn-large waves-effect waves-light lighten-1" style="background-color: #B3E5FC;text-color: #000000">Register Now</a>
+                       <a href="{{ url('/register') }}" id="download-button" class="btn-large waves-effect waves-light lighten-1 black-text" style="background-color: #B3E5FC;">Register Now</a>
                      </div>
                      <br><br>
              

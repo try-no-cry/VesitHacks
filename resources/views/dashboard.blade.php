@@ -59,7 +59,7 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                         <a href="{{ url('/alert') }}"><h5 class="center">Alert Boss</h5></a>
+                         <a href="{{ url('/alert') }}"><h5 class="center">Alert Incharge</h5></a>
                          
              
                          <p class="center light">Alert your direct superior about exceptional/poor performance of your subordinates</p>
