@@ -3,7 +3,7 @@
 @section('content')
 
 <ul>
-<?php dd($reports); ?>
+
 
 <h3 style="color:rgb(10,10,245);"> <u><center> VIEW REPORTS</center></u></h3>
 <h4>&nbsp List of Reports: </h4>
