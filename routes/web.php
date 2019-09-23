@@ -24,6 +24,7 @@ Route::post('/logout','HomeController@logout')->name('logout');
 Route::get('/dashboard', 'HomeController@showdashboard');
 Route::get('/adb', 'HomeController@showadbdashboard');
 Route::get('/delete','HomeController@deleteuser');
+Route::get('/modify','HomeController@modifyuser');
 
 Route::get('/profiledetails','HomeController@profileDetails');
 
@@ -38,6 +39,8 @@ Route::get('/rate','HomeController@rate');
 Route::get('/viewrate','HomeController@viewrate');
 
 Route::get('/alert','HomeController@alert');
+Route::post('/modifysubmit','HomeController@modify')->name('modifysubmit');
+
 Route::get('/contact','HomeController@contact');
 
 Route::get('/register','HomeController@register');
