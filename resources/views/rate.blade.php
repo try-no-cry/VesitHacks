@@ -1,21 +1,19 @@
 
 @extends('layouts.app2')
 @section('content')
-    <ol>
+
+    <ul  class="collapsible container center margin-left:200px">
     <!-- $key = array_search('green', $array); // $key = 2;
  -->
        <!-- index of each name repesents its id -->
       @foreach($team as $name)
-        <div class="sh">
-            <li><a class="modal-trigger" href="#modal1/{{$name}}">{{ $name }} </a></li>
-            
-        </div>
-            <div id="modal1/{{$name}}" class="modal container">
-            <h6 class="center">Rate {{$name}}</h4>
+      <li>
+      <div class="collapsible-header"><i class="material-icons">group</i>{{$name}}</div>
            <?php $key=array_search($name ,$team ) ?>
-                <form action="{{ url('review',['uid'=> $key])  }}" method="POST">
+           <div class="collapsible-body">
+                <form action="{{ url('review',['uid'=> $key])  }}" method="POST" >
                 @csrf
-                <ul class="container">
+                <ul>
                     <div class="input-field">
                         <input type="number" name="punctuality" id="punctuality" min="0" max="10" required>
                         <label for="punctuality">Punctuality</label>
@@ -36,14 +34,20 @@
                         <label for="punctuality">Contribution</label>
 
                     </div>
-                    
-                        <input type="submit" class="right btn btn-submit" style="margin:10px auto;"value="Submit">
-                   
+                    <div>
+                        <input type="submit" class="center btn btn-submit" value="Submit">
+                   </div>
                     </ul>
             </form>
-            </div>
+           </div>
         
     @endforeach
 
-    </ol>
+    </ul>
+    
+    <script>
+        $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+    </script>
 @endsection

@@ -128,7 +128,7 @@ $(document).ready(function(){
   $('.parallax').parallax();
   $('.dropdown-trigger').dropdown();
   $('.modal').modal();
- 
+  $('.collapsible').collapsible();
 
 });
      
