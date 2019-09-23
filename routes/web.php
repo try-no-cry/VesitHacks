@@ -37,3 +37,5 @@ Route::get('/viewrate','HomeController@viewrate');
 
 Route::get('/alert','HomeController@alert');
 Route::get('/contact','HomeController@contact');
+
+Route::post('/review/{uid}','HomeController@addReview')->name('review');

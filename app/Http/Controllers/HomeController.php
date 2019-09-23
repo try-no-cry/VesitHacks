@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Report;
+use App\Review;
+use App\Manager_team;
 use Session;
 use Illuminate\Http\Request;
 use DB;
@@ -197,8 +199,28 @@ class HomeController extends Controller
              return redirect()->route('welcome');
     else $user=Session::get('user'); 
 
-     return view('rate',compact('user')) ;
+   $teams= Manager_team::where('manager_id',$user->user_id)->get();
+   $no=array();
+   
+
+    for($i=0;$i<count($teams);$i++){
+        $no[$i] =$teams[$i]->member_id;
+    }
+
+    $team=array();
+    for($i=0;$i<count($teams);$i++){
+        $a=User::find($no[$i]);
+        $team[$no[$i]]=$a->name;
+    }
+
+    // dd($team);
+
+   
+
+     return view('rate',compact('user','team'));
  }
+
+
 
 public function viewrate () {
     if(Session::get('user')==null)
@@ -244,6 +266,54 @@ public function viewrate () {
 
      return view('alert',compact('user'));
  }
+
+
+
+
+
+ public function addReview( $uid){
+
+
+    if(Session::get('user')==null)
+              return redirect()->route('welcome');
+    else $user=Session::get('user'); 
+
+     $punctuality=$_POST['punctuality'];
+     $targets_acheived=$_POST['targets_acheived'];
+     $behaviour=$_POST['behaviour'];
+     $contribution=$_POST['contribution'];
+
+     $forID=$uid;
+     $byID=$user->user_id;
+
+     $data=request()->validate([
+         
+        'punctuality'=>'required|max:10|min:0',
+        'targets_acheived' =>'required|max:10|min:0',
+        'behaviour'  =>'required|max:10|min:0',
+        'contribution'   =>'required|max:10|min:0'
+
+     ]);
+     $review=new Review();
+     $review->r_for_id=$forID;
+     $review->r_by_id=$byID;
+     $review->punctuality=$punctuality;
+     $review->targets_acheived=$targets_acheived;
+     $review->behaviour=$behaviour;
+     $review->contribution=$contribution;
+
+     $review->save();
+    
+     return back();
+
+
+     Review::create($data);
+
+
+ }
    
 }
+
+
+
 
