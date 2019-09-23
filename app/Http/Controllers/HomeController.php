@@ -53,6 +53,11 @@ class HomeController extends Controller
             {
                 // $_SESSION['user']=$user;
                 Session::put('user', $user);
+                
+                if($user->name=='ADMIN')
+                {
+                    return view('adb');
+                }
                
                return view('dashboard',compact('user'));
             }
@@ -81,9 +86,8 @@ public function doRegister(){
      ]);
    $user= User::create($data);
 
-       Session::put('user', $user);
-
     
+<<<<<<< HEAD
   return view('dashboard',compact('user'));
 }   
 
@@ -117,6 +121,10 @@ function alertMessage(){
 } 
 
 
+=======
+  return view('adb');
+}    
+>>>>>>> 1042d8930c29df2db2e1965154e16388dea5775b
   
  public function register()
  {
@@ -141,6 +149,20 @@ function alertMessage(){
 
      return view('dashboard',compact('user')) ;
  }
+    
+    public function showadbDashboard () {
+     
+    
+    if(Session::get('user')==null){
+
+        return redirect()->route('welcome');
+    }
+           
+     else $user=Session::get('user');  
+
+     return view('adb',compact('user')) ;
+ }
+    
 
  public function contact(){
      $user=User::all();
@@ -226,6 +248,18 @@ function alertMessage(){
           {
            return redirect()->route('upload_resume');
           }
+         
+          
+        
+
+         
+
+ }
+
+ public function deleteAUser($user){
+     $u=User::find($user);
+     $u->delete();
+     return back();
  }
 
  public  function viewReport() {
@@ -361,7 +395,17 @@ public function viewrate () {
 
 
  }
-   
+
+    public function deleteuser()
+    {
+        if(Session::get('user')==null)
+              return redirect()->route('welcome');
+    else $user=Session::get('user'); 
+
+    $users=User::all();
+     return view('delete',compact('users'));
+    }
+
 }
 
 

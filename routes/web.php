@@ -24,6 +24,9 @@ Route::post('/logout','HomeController@logout')->name('logout');
 
 
 Route::get('/dashboard', 'HomeController@showdashboard');
+Route::get('/adb', 'HomeController@showadbdashboard');
+Route::get('/delete','HomeController@deleteuser');
+Route::get('/deleteUser/{user}','HomeController@deleteAUser');
 
 Route::get('/profiledetails','HomeController@profileDetails');
 
