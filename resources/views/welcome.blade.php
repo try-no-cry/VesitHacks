@@ -17,7 +17,7 @@
                        <h5 class="header col s12 light blwack-text">
                         An efficient way to assess & track your employees  <br> and enhance your organisation's performance
                       </h5>
-                     </div>
+                    </div>
                      <div class="row center">
                        <a href="/register" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Register</a>
                      </div>
@@ -27,7 +27,7 @@
                  </div>
                  <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
                </div>
-             
+            
              
                <div class="container">
                  <div class="section">
@@ -74,7 +74,7 @@
                      </div>
                    </div>
                  </div>
-                 <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
+                 <div class="parallax"><img src="images/background4.jpg" alt="Unsplashed background img 2"></div>
                </div>
              
                <div class="container">
