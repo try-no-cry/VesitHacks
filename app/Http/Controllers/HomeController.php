@@ -115,6 +115,7 @@ public function doRegister(){
 
  public function showDashboard () {
      
+    
     if(Session::get('user')==null){
 
         return redirect()->route('welcome');
@@ -184,8 +185,9 @@ public function doRegister(){
         $rid=User::where('email',$receivers_email)->get();
         $report->receiver_id=$rid[0]->user_id;
         $report->title=request()->input('title');
-        $report->title=request()->input('message');
+        $report->message=request()->input('message');
         $report->file_path=$destinationPath.'/'.$filenametostore;
+     
         $report->save();
 
         // dd($report);
