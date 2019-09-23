@@ -115,6 +115,7 @@ public function doRegister(){
 
  public function showDashboard () {
      
+    
     if(Session::get('user')==null){
 
         return redirect()->route('welcome');
