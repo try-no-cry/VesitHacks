@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2019 at 06:05 AM
+-- Generation Time: Sep 23, 2019 at 10:33 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -119,7 +119,11 @@ CREATE TABLE `reports` (
 
 INSERT INTO `reports` (`report_id`, `sender_id`, `receiver_id`, `title`, `message`, `file_path`, `created_at`, `updated_at`) VALUES
 (1, 2, 1, 'Promote this man.', NULL, 'abhaytiwari@gmail.com/Reportby21383871742.txt', '2019-09-22 17:17:23', '2019-09-22 17:38:27'),
-(2, 2, 2, 'qewwehrjrh', NULL, 'abhaytiwari@gmail.com/Reportby21404908721.pdf', '2019-09-22 17:40:07', '2019-09-22 17:40:07');
+(2, 2, 2, 'qewwehrjrh', NULL, 'abhaytiwari@gmail.com/Reportby21404908721.pdf', '2019-09-22 17:40:07', '2019-09-22 17:40:07'),
+(3, 4, 6, 'test report', 'test message', 'prateekmehta@gmail.com/Reportby4284420477.jpg', '2019-09-23 05:04:23', '2019-09-23 05:04:23'),
+(4, 7, 4, 'test1', 'testttttt', 'happysingh@gmail.com/Reportby71489824589.jpg', '2019-09-23 05:13:44', '2019-09-23 05:13:44'),
+(5, 6, 7, 'Webpage complete', 'HTML and CSS used', 'abhaytiwari@gmail.com/Reportby21404908721.pdf', '2019-09-23 07:19:01', '2019-09-23 07:19:01'),
+(6, 7, 3, 'sir demo', 'demo report', 'happysingh@gmail.com/Reportby71832104432.jpg', '2019-09-23 07:49:34', '2019-09-23 07:49:34');
 
 -- --------------------------------------------------------
 
@@ -182,7 +186,13 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `designation`, `rol
 (4, 'Prateek Mehta', 'prateekmehta@gmail.com', '1234567890', 'ML expert', 2, 'Gokuldham', '8362781820', 2, 14000, '5,6'),
 (5, 'Heramb Kulkarni', 'herambkulkarni@gmail.com', '1234567890', 'Android ', 1, 'Dadar TT', '8765543901', 3, 7300, '8'),
 (6, 'Aditya Raute', 'adityaraute@gmail.com', '1234567890', 'Web design ', 3, 'Panvel', '9812763455', 1, 20000, '4,5,6'),
-(7, 'Happy Singh', 'happysingh@gmail.com', '1234567890', 'CTO', 4, 'Mumbai', '7937639312', 0, 30000, '4,5,6,7,8');
+(7, 'Happy Singh', 'happysingh@gmail.com', '1234567890', 'CTO', 4, 'Mumbai', '7937639312', 0, 30000, '4,5,6,7,8'),
+(8, 'a', '11@11.11', '1', '11', 1, '11', '11111111111', 11, 11, '1'),
+(9, 'Try', 't@t', '1234', 'DB', 2, 'Chembur', '1234567890', 1, 15000, '7,8'),
+(10, '2', '2@2.2', '2', '2', 2, '2', '22222222222', 2, 2, '2'),
+(11, '2', '2@2.2', '2', '2', 2, '2', '22222222222', 2, 2, '2'),
+(12, 'ADMIN', 'admin@gmail.com', 'pass', 'admin', 100, 'Malad', '1234567890', 100, 100000, '2,3,4'),
+(13, 'name', 'em@em', '1234567890', 'db', 2, 'chembur', '1234567890', 5, 20000, '1,2,3');
 
 --
 -- Indexes for dumped tables
@@ -249,19 +259,19 @@ ALTER TABLE `current_project`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

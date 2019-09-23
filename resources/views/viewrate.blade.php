@@ -44,7 +44,7 @@
             'width': 900,
             'height': 500,
             'legend': 'none',
-            'chartArea': {'left': 30, 'top': 30, 'right': 30, 'bottom': 30},
+            'chartArea': {'left': 50, 'top': 30, 'right': 30, 'bottom': 30},
             'pieSliceText': 'value'
           },
           'responsive':true
@@ -78,7 +78,7 @@
       <div id="programmatic_dashboard_div">
       
         <div id= "programmatic_control_div"></div>
-        <div id="programmatic_chart_div" style="width: 900px; height: 900px"></div>
+        <div id="programmatic_chart_div" style="width: 900px; height: 1200px"></div>
 
 
 

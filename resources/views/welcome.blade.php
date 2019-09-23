@@ -12,7 +12,8 @@
                       <br><br>
                      <div class="row center">
                        <h5 class="header col s12 light blwack-text">
-                        An efficient way to assess & track your employees  <br> and enhance your organisation's performance
+                           <br><br>
+                        An efficient way to assess & track <br> your employees and enhance your organisation's performance
                       </h5>
                     </div>
 
@@ -50,7 +51,7 @@
                      <div class="col s12 m4">
                        <div class="icon-block">
                          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                         <h5 class="center">Easy to work with</h5>
+                         <h5 class="center">Easy to Use</h5>
              
                          <p class="center light">Statistics are displayed and rated based<br> on Employee's performance based <br>on a scale 1-10 considering various reviews.</p>
                        </div>
