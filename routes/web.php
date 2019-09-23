@@ -38,4 +38,7 @@ Route::get('/viewrate','HomeController@viewrate');
 Route::get('/alert','HomeController@alert');
 Route::get('/contact','HomeController@contact');
 
+Route::get('/register','HomeController@register');
+Route::post('/register','HomeController@doRegister')->name('register');
+
 Route::post('/review/{uid}','HomeController@addReview')->name('review');
