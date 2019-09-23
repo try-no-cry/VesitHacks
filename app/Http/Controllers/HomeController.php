@@ -79,8 +79,33 @@ class HomeController extends Controller
      Session::forget('user');
      return \redirect()->route('welcome');
  }
+    
+public function doRegister(){
+      $data=request()->validate(
+     [
+         "name"=>'required',
+         "email"=>'required|email',
+         "password"=>'required',
+         "designation"=>'required',
+         "role" =>'required',
+         "address"=> 'required',
+         "contact"=>'required',
+         "current_project_id"=> 'required',
+         "salary" => 'required',
+         'projects_done'=>'required'
+     ]);
+     User::create($data);
+     return back()->withErrors(["Registration Successful"]);
+
+}    
   
- public function index()
+ public function register()
+ {
+     return view('register');
+     
+    }
+    
+    public function index()
  {
      return view('home');
  }
@@ -259,6 +284,9 @@ public function viewrate () {
             return view('viewrate',compact('user'))
             ->with('review',json_encode($result));
  }
+    
+    
+    
 
  function alert () {
     if(Session::get('user')==null)

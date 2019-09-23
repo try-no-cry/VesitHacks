@@ -78,12 +78,12 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">View Profile</a></li>
-    <li><a href="badges.html">Send Reports</a></li>
-    <li><a href="badges.html">View Report</a></li>
-    <li><a href="collapsible.html">Rate Subordinates</a></li>
-    <li><a href="mobile.html">View Ratings</a></li>
-    <li><a href="mobile.html">Alert Incharge</a></li>
+    <li><a href="{{ url('/profiledetails') }}">View Profile</a></li>
+    <li><a href="{{ url('/sendreport') }}">Send Reports</a></li>
+    <li><a href="{{ url('/viewreport') }}">View Report</a></li>
+    <li><a href="{{ url('/rate') }}">Rate Subordinates</a></li>
+    <li><a href="{{ url('/viewrate') }}">View Ratings</a></li>
+    <li><a href="{{ url('/alert') }}">Alert Incharge</a></li>
 
     <form action="{{ url('/logout') }}" method="post" style="margin-left:10px;">
                    @csrf

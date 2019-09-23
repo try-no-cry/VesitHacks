@@ -3,6 +3,7 @@
 @section('content')
 
 <ul>
+<!--?php dd($reports); ?-->
 @foreach($reports as $report)
 
 <li>
