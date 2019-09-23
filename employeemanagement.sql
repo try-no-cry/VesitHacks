@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2019 at 06:05 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Generation Time: Sep 23, 2019 at 08:59 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,6 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `alertmessages`
+--
+
+CREATE TABLE `alertmessages` (
+  `alert_id` int(11) NOT NULL,
+  `from_id` int(11) NOT NULL,
+  `to_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `issue` varchar(256) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+
+--
+-- Dumping data for table `alertmessages`
+--
+
+INSERT INTO `alertmessages` (`alert_id`, `from_id`, `to_id`, `message`, `issue`, `created_at`, `updated_at`) VALUES
+(1, 2, 2, 'abcdefgh', 'high', '2019-09-23 06:10:57', '2019-09-23 06:10:57'),
+(2, 2, 2, 'abcdefgh', 'high', '2019-09-23 06:11:14', '2019-09-23 06:11:14'),
+(3, 2, 2, 'sasfd', 'high', '2019-09-23 06:42:11', '2019-09-23 06:42:11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `completed_projects`
 --
 
@@ -33,7 +58,7 @@ CREATE TABLE `completed_projects` (
   `project_name` varchar(255) NOT NULL,
   `project_status` varchar(255) NOT NULL,
   `project_manager_id` int(11) NOT NULL,
-  `project_start_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `project_start_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `project_completed_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -60,7 +85,7 @@ CREATE TABLE `current_project` (
   `status` varchar(255) NOT NULL,
   `task_name` varchar(255) NOT NULL,
   `task_description` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -107,10 +132,10 @@ CREATE TABLE `reports` (
   `sender_id` int(11) NOT NULL,
   `receiver_id` int(11) NOT NULL,
   `title` varchar(256) NOT NULL,
-  `message` text,
+  `message` text DEFAULT NULL,
   `file_path` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 --
@@ -135,8 +160,8 @@ CREATE TABLE `review` (
   `targets_acheived` int(11) NOT NULL,
   `behaviour` int(11) NOT NULL,
   `contribution` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -149,7 +174,10 @@ INSERT INTO `review` (`review_id`, `r_for_id`, `r_by_id`, `punctuality`, `target
 (3, 3, 6, 9, 5, 2, 7, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
 (4, 4, 6, 6, 5, 4, 5, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
 (5, 1, 7, 7, 10, 7, 4, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
-(6, 6, 7, 4, 8, 10, 7, '2019-09-23 00:40:53', '2019-09-23 00:40:53');
+(6, 6, 7, 4, 8, 10, 7, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(7, 1, 2, 1, 2, 3, 4, '2019-09-22 19:15:55', '2019-09-22 19:15:55'),
+(8, 6, 2, 2, 2, 2, 2, '2019-09-22 19:17:07', '2019-09-22 19:17:07'),
+(9, 1, 2, 1, 1, 1, 1, '2019-09-23 00:49:53', '2019-09-23 00:49:53');
 
 -- --------------------------------------------------------
 
@@ -187,6 +215,12 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `designation`, `rol
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `alertmessages`
+--
+ALTER TABLE `alertmessages`
+  ADD PRIMARY KEY (`alert_id`);
 
 --
 -- Indexes for table `completed_projects`
@@ -232,6 +266,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `alertmessages`
+--
+ALTER TABLE `alertmessages`
+  MODIFY `alert_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `completed_projects`

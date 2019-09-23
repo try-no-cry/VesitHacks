@@ -1,20 +1,11 @@
-<!-- <html>
-    <head>
-        <style>
-            input[type="radio"]{
-                display: inline;
-        }
-        </style>
-    </head>
-</html> -->
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact </title>
+	<title>Contact V15</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -42,7 +33,7 @@
 </head>
 <style>
 body {
-  background-color: lightblue;
+  background-color: #ECEDF1;
 }
 </style>
 <body>
@@ -54,54 +45,63 @@ body {
 		<div class="wrap-contact100">
 			<div class="contact100-form-title" style="background-image: url(images/bg-02.jpg);">
 				<span class="contact100-form-title-1">
-					Alert Boss
+					Profile Details
 				</span>
 
 				<span class="contact100-form-title-2">
-				
 				</span>
 			</div>
-			@if($errors->any())
+
+			<form class="contact100-form validate-form">
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Full Name:</span>
+					<span class="label">{{ $user->name }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "ID is required">
+					<span class="label-input100">Employee   ID:</span>
+					<span class="label">{{ $user->user_id }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "ID is required">
+					<span class="label-input100">Designation:</span>
+					<span class="label">{{ $user->designation }} </span>
+					<span class="focus-input100"></span>
+				</div>
+        <div class="wrap-input100 validate-input" data-validate = "ID is required">
+					<span class="label-input100">Current Project:</span>
+					<span class="label">{{ $user->current_project_id }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Contact Number:</span>
+					<span class="label">{{ $user->contact }} </span>
+					<span class="focus-input100"></span>
+				</div>
+
 			
-			<ul>
 
-		<center>	<LI style="color:red;">{{$errors->first() }}</LI></center>
-				
-			</ul>	
-			@endif
-
-			<form class="contact100-form validate-form" action="{{route('alertMessage')}}" method="post" >
-				<div class="wrap-input100 validate-input" data-validate="send to">
-				@csrf
-					<span class="label-input100">Receiver's E-Mail:</span>
-					<input class="input100" type="text" name="email" placeholder="Enter EMail">
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Address:</span>
+					<span class="label">{{ $user->address }} </span>
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Message is required">
-					<span class="label-input100">Message:</span>
-					<input class="input100" type="text" name="message" placeholder="Enter your Message">
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Salary:</span>
+					<span class="label">{{ $user->salary }} </span>
 					<span class="focus-input100"></span>
 				</div>
-                
-                <div class="wrap-input100 validate-input" data-validate = "Option is required">
-                    <span class="label-input100">Performance:</span>
-                    <select class="input100" name="perf">
-                        <option value="high">High Performer</option>
-                        <option value="low">Low Performer</option>
-                    </select>
-                    <span class="focus-input100"></span>
-				</div>
-            
 
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn" type="submit">
-						<span>
-							Submit
-							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-						</span>
-					</button>
+				<div class="wrap-input100 validate-input" data-validate = "Contact is required">
+					<span class="label-input100">Role:</span>
+					<span class="label">{{ $user->role }} </span>
+					<span class="focus-input100"></span>
 				</div>
+
 			</form>
 		</div>
 	</div>

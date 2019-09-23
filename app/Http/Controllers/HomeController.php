@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Report;
 use App\Review;
+use App\AlertMessage;
 use App\Manager_team;
 use Session;
 use Illuminate\Http\Request;
@@ -33,23 +34,7 @@ class HomeController extends Controller
 
 
  public function login(){
-    //  return 123;
-    //  $email= $request->input('email');
-	// 			$pass= $request->input('password');
-	// 			//return $username;
-	// 			//return $pass;
-	// 			$user = DB::table('users')->select('password')->where('email',$email)->get();
-	// 			//return $user;
-	// 			if($pass == $user[0]->password)
-	// 				{
-	// 						$request->session()->put('username',$username);
-	// 						return "abhay";
-	// 				}
-	// 			else
-	// 			{
-    //                 $request->session()->flash('error','Invalid Username & Password');
-    //             }
-    //                 // return redirect()->route('admin_login');
+   
                     
      $email=request()->email;
      $pwd=request()->password;
@@ -80,6 +65,27 @@ class HomeController extends Controller
        return  back()->withErrors(['Wrong Credentials']);     
  }
 
+    public function modify()
+    {
+        $data=request()->validate(
+     [
+         "user_id"=>'required',
+         "email"=>'required|email',
+         "designation"=>'required',
+         "role" =>'required',
+         "address"=> 'required',
+         "contact"=>'required',
+         "current_project_id"=> 'required',
+         "salary" => 'required',
+         'projects_done'=>'required'
+     ]);
+        User::where('user_id',$data["user_id"])->update($data);
+        return view('adb');
+    }
+   
+    
+    
+    
  public function logout(){
      Session::forget('user');
      return \redirect()->route('welcome');
@@ -102,8 +108,44 @@ public function doRegister(){
    $user= User::create($data);
 
     
+<<<<<<< HEAD
+  return view('dashboard',compact('user'));
+}   
+
+
+function alertMessage(){
+
+    if(Session::get('user')==null)
+           return redirect()->route('welcome');
+    else $user=Session::get('user');   
+    
+    $fromId=$user->user_id;
+    $email=request()->input('email');
+    
+
+    $a=User::where('email',$email)->get();
+
+    if(count($a)==0)
+        return back()->withErrors("Wrong email-id entered!");
+    $toId=$a[0]->user_id;
+
+    $alert=new AlertMessage();
+    $alert->from_id=$fromId;
+    $alert->to_id=$toId;
+    $alert->message=request()->input('message');
+    $alert->issue=request()->input('perf');
+    $alert->save();
+
+    return back()->withErrors(["Alert Message submitted successfully!"]);
+
+
+} 
+
+
+=======
   return view('adb');
 }    
+>>>>>>> 1042d8930c29df2db2e1965154e16388dea5775b
   
  public function register()
  {
@@ -384,7 +426,21 @@ public function viewrate () {
     $users=User::all();
      return view('delete',compact('users'));
     }
+<<<<<<< HEAD
+    
+    public function modifyuser()
+    {
+        if(Session::get('user')==null)
+              return redirect()->route('welcome');
+    else $user=Session::get('user'); 
+     
+        $udata = User::all();
+     return view('modify',compact('udata'));
+    }
+   
+=======
 
+>>>>>>> 1042d8930c29df2db2e1965154e16388dea5775b
 }
 
 

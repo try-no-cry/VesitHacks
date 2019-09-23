@@ -16,6 +16,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 
+Route::post('/alertMessage','HomeController@alertMessage')->name('alertMessage');
+
 
 Route::post('/','HomeController@login')->name('login');
 Route::post('/logout','HomeController@logout')->name('logout');
@@ -24,7 +26,11 @@ Route::post('/logout','HomeController@logout')->name('logout');
 Route::get('/dashboard', 'HomeController@showdashboard');
 Route::get('/adb', 'HomeController@showadbdashboard');
 Route::get('/delete','HomeController@deleteuser');
+<<<<<<< HEAD
+Route::get('/modify','HomeController@modifyuser');
+=======
 Route::get('/deleteUser/{user}','HomeController@deleteAUser');
+>>>>>>> 1042d8930c29df2db2e1965154e16388dea5775b
 
 Route::get('/profiledetails','HomeController@profileDetails');
 
@@ -39,6 +45,8 @@ Route::get('/rate','HomeController@rate');
 Route::get('/viewrate','HomeController@viewrate');
 
 Route::get('/alert','HomeController@alert');
+Route::post('/modifysubmit','HomeController@modify')->name('modifysubmit');
+
 Route::get('/contact','HomeController@contact');
 
 Route::get('/register','HomeController@register');
