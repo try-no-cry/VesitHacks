@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 
@@ -81,7 +81,7 @@ body {
 					<center>
 					@if($errors->any())
 						
-						 <h4 style="color:red;">{{$errors->first()}}</h4>
+						 <h5 style="color:red;">{{$errors->first()}}</h5>
 						
 					@endif
 					<p style="font-weight: bold; font-family: 'Bree Serif', serif; font-size: 200%; color: black;"></p>

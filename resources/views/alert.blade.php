@@ -7,7 +7,7 @@
         </style>
     </head>
 </html> -->
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 

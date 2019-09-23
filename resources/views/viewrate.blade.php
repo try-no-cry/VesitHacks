@@ -1,8 +1,13 @@
 
-@extends('layouts.app')
+@extends('layouts.app2')
 @section('content')
   <head>
+  <style>
 
+  .selection input{ padding:2px;
+
+  }
+  </style>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -26,9 +31,7 @@
           'containerId': 'programmatic_control_div',
           'options': {
             'filterColumnLabel': 'Name',
-            'ui': {'labelStacking': 'vertical',
-           
-          }
+            'ui': {'labelStacking': 'vertical','cssSelector': 'selection'       }
           }
         });
 
