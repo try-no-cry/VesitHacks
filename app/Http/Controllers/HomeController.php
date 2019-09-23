@@ -444,6 +444,7 @@ public function viewrate () {
         
         $review = DB::table('users')
             ->select(
+                DB::raw("user_id as id"),
                 DB::raw("name as name")
                 )
             ->orderBy("name")
@@ -452,11 +453,11 @@ public function viewrate () {
 
             //dd($review, $user);
 
-            $result[] = ['Name','Punctuality','Behaviour','Targets','Contribution'];
+            $result[] = ['ID', 'Name'];
             foreach ($review as $key => $value) {
                 
              
-            $result[++$key] = [$value->name];}
+            $result[++$key] = [$value->id, $value->name];}
             // dd($result, $visitor);
          return view('modify',compact('udata','user'))->with('review',json_encode($result));
             }
