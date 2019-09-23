@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Sep 22, 2019 at 02:11 PM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Host: 127.0.0.1
+-- Generation Time: Sep 23, 2019 at 02:56 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,17 +28,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `completed_projects`
 --
 
-DROP TABLE IF EXISTS `completed_projects`;
-CREATE TABLE IF NOT EXISTS `completed_projects` (
-  `proj_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `completed_projects` (
+  `proj_id` int(11) NOT NULL,
   `project_name` varchar(255) NOT NULL,
   `project_status` varchar(255) NOT NULL,
   `project_manager_id` int(11) NOT NULL,
-  `project_start_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `project_completed_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`proj_id`),
-  KEY `project_manager_id` (`project_manager_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  `project_start_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `project_completed_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `completed_projects`
@@ -57,18 +54,15 @@ INSERT INTO `completed_projects` (`proj_id`, `project_name`, `project_status`, `
 -- Table structure for table `current_project`
 --
 
-DROP TABLE IF EXISTS `current_project`;
-CREATE TABLE IF NOT EXISTS `current_project` (
-  `proj_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `current_project` (
+  `proj_id` int(11) NOT NULL,
   `proj_manager_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `task_name` varchar(255) NOT NULL,
   `task_description` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`proj_id`),
-  KEY `proj_manager_id` (`proj_manager_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `current_project`
@@ -85,15 +79,47 @@ INSERT INTO `current_project` (`proj_id`, `proj_manager_id`, `status`, `task_nam
 -- Table structure for table `manager_team`
 --
 
-DROP TABLE IF EXISTS `manager_team`;
-CREATE TABLE IF NOT EXISTS `manager_team` (
-  `team_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `manager_team` (
   `manager_id` int(11) NOT NULL,
-  `member_id` int(11) NOT NULL,
-  PRIMARY KEY (`team_id`),
-  KEY `manager_id` (`manager_id`),
-  KEY `member_id` (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `member_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `manager_team`
+--
+
+INSERT INTO `manager_team` (`manager_id`, `member_id`) VALUES
+(7, 2),
+(7, 3),
+(5, 4),
+(5, 1),
+(2, 1),
+(2, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `report_id` int(11) NOT NULL,
+  `sender_id` int(11) NOT NULL,
+  `receiver_id` int(11) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `message` text DEFAULT NULL,
+  `file_path` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`report_id`, `sender_id`, `receiver_id`, `title`, `message`, `file_path`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, 'Promote this man.', NULL, 'abhaytiwari@gmail.com/Reportby21383871742.txt', '2019-09-22 17:17:23', '2019-09-22 17:38:27'),
+(2, 2, 2, 'qewwehrjrh', NULL, 'abhaytiwari@gmail.com/Reportby21404908721.pdf', '2019-09-22 17:40:07', '2019-09-22 17:40:07');
 
 -- --------------------------------------------------------
 
@@ -101,31 +127,32 @@ CREATE TABLE IF NOT EXISTS `manager_team` (
 -- Table structure for table `review`
 --
 
-DROP TABLE IF EXISTS `review`;
-CREATE TABLE IF NOT EXISTS `review` (
-  `review_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `review` (
+  `review_id` int(11) NOT NULL,
   `r_for_id` int(11) NOT NULL,
   `r_by_id` int(11) NOT NULL,
   `punctuality` int(11) NOT NULL,
   `targets_acheived` int(11) NOT NULL,
   `behaviour` int(11) NOT NULL,
   `contribution` int(11) NOT NULL,
-  PRIMARY KEY (`review_id`),
-  KEY `r_for_id` (`r_for_id`),
-  KEY `r_by_id` (`r_by_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`review_id`, `r_for_id`, `r_by_id`, `punctuality`, `targets_acheived`, `behaviour`, `contribution`) VALUES
-(1, 2, 1, 10, 6, 9, 8),
-(2, 5, 1, 5, 9, 7, 3),
-(3, 3, 6, 9, 5, 2, 7),
-(4, 4, 6, 6, 5, 4, 5),
-(5, 1, 7, 7, 10, 7, 4),
-(6, 6, 7, 4, 8, 10, 7);
+INSERT INTO `review` (`review_id`, `r_for_id`, `r_by_id`, `punctuality`, `targets_acheived`, `behaviour`, `contribution`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, 10, 6, 9, 8, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(2, 5, 1, 5, 9, 7, 3, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(3, 3, 6, 9, 5, 2, 7, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(4, 4, 6, 6, 5, 4, 5, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(5, 1, 7, 7, 10, 7, 4, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(6, 6, 7, 4, 8, 10, 7, '2019-09-23 00:40:53', '2019-09-23 00:40:53'),
+(7, 1, 2, 1, 2, 3, 4, '2019-09-22 19:15:55', '2019-09-22 19:15:55'),
+(8, 6, 2, 2, 2, 2, 2, '2019-09-22 19:17:07', '2019-09-22 19:17:07'),
+(9, 1, 2, 1, 1, 1, 1, '2019-09-23 00:49:53', '2019-09-23 00:49:53');
 
 -- --------------------------------------------------------
 
@@ -133,32 +160,111 @@ INSERT INTO `review` (`review_id`, `r_for_id`, `r_by_id`, `punctuality`, `target
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` text NOT NULL,
+  `designation` varchar(256) DEFAULT NULL,
+  `role` int(11) DEFAULT NULL,
   `address` text NOT NULL,
   `contact` varchar(11) NOT NULL,
   `current_project_id` int(11) NOT NULL,
   `salary` int(11) NOT NULL,
-  `projects_done` varchar(255) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `projects_done` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `address`, `contact`, `current_project_id`, `salary`, `projects_done`) VALUES
-(1, 'Yash Goyal', 'yashgoyal@gmail.com', '1234567890', 'Kharghar', '9876543210', 3, 15000, '7,8'),
-(2, 'Abhay Tiwari', 'abhaytiwari@gmail.com', '1234567890', 'Chembur', '9729476491', 1, 13000, '7,8'),
-(3, 'Alisha Punwani', 'alishapunwani@gmail.com', '1234567890', 'Mulund', '9838263816', 2, 18000, '4,6'),
-(4, 'Prateek Mehta', 'prateekmehta@gmail.com', '1234567890', 'Gokuldham', '8362781820', 2, 14000, '5,6'),
-(5, 'Heramb Kulkarni', 'herambkulkarni@gmail.com', '1234567890', 'Dadar TT', '8765543901', 3, 7300, '8'),
-(6, 'Aditya Raute', 'adityaraute@gmail.com', '1234567890', 'Panvel', '9812763455', 1, 20000, '4,5,6'),
-(7, 'Happy Singh', 'happysingh@gmail.com', '1234567890', 'Mumbai', '7937639312', 0, 30000, '4,5,6,7,8');
+INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `designation`, `role`, `address`, `contact`, `current_project_id`, `salary`, `projects_done`) VALUES
+(1, 'Yash Goyal', 'yashgoyal@gmail.com', '1234567890', 'Frontend developer', 1, 'Kharghar', '9876543210', 3, 15000, '7,8'),
+(2, 'Abhay Tiwari', 'abhaytiwari@gmail.com', '1234567890', 'DB admin', 1, 'Chembur', '9729476491', 1, 13000, '7,8'),
+(3, 'Alisha Punwani', 'alishapunwani@gmail.com', '1234567890', 'UI/UX designer', 2, 'Mulund', '9838263816', 2, 18000, '4,6'),
+(4, 'Prateek Mehta', 'prateekmehta@gmail.com', '1234567890', 'ML expert', 2, 'Gokuldham', '8362781820', 2, 14000, '5,6'),
+(5, 'Heramb Kulkarni', 'herambkulkarni@gmail.com', '1234567890', 'Android ', 1, 'Dadar TT', '8765543901', 3, 7300, '8'),
+(6, 'Aditya Raute', 'adityaraute@gmail.com', '1234567890', 'Web design ', 3, 'Panvel', '9812763455', 1, 20000, '4,5,6'),
+(7, 'Happy Singh', 'happysingh@gmail.com', '1234567890', 'CTO', 4, 'Mumbai', '7937639312', 0, 30000, '4,5,6,7,8');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `completed_projects`
+--
+ALTER TABLE `completed_projects`
+  ADD PRIMARY KEY (`proj_id`),
+  ADD KEY `project_manager_id` (`project_manager_id`);
+
+--
+-- Indexes for table `current_project`
+--
+ALTER TABLE `current_project`
+  ADD PRIMARY KEY (`proj_id`),
+  ADD KEY `proj_manager_id` (`proj_manager_id`);
+
+--
+-- Indexes for table `manager_team`
+--
+ALTER TABLE `manager_team`
+  ADD KEY `manager_id` (`manager_id`),
+  ADD KEY `member_id` (`member_id`);
+
+--
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`report_id`);
+
+--
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `r_for_id` (`r_for_id`),
+  ADD KEY `r_by_id` (`r_by_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `completed_projects`
+--
+ALTER TABLE `completed_projects`
+  MODIFY `proj_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `current_project`
+--
+ALTER TABLE `current_project`
+  MODIFY `proj_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
