@@ -16,6 +16,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 
+Route::post('/alertMessage','HomeController@alertMessage')->name('alertMessage');
+
 
 Route::post('/','HomeController@login')->name('login');
 Route::post('/logout','HomeController@logout')->name('logout');
@@ -26,6 +28,7 @@ Route::get('/adb', 'HomeController@showadbdashboard');
 Route::get('/delete','HomeController@deleteuser');
 
 Route::get('/modify','HomeController@modifyuser');
+
 
 Route::get('/deleteUser/{user}','HomeController@deleteAUser');
 

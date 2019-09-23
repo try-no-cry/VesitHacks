@@ -27,13 +27,13 @@
           'containerId': 'programmatic_control_div',
           'options': {
             'filterColumnLabel': 'Name',
-            'ui': {'labelStacking': 'vertical'   }
+            'ui': {'labelStacking': 'horizontal' }
           }
         });
 
 
         var programmaticChart  = new google.visualization.ChartWrapper({
-          'chartType': 'ColumnChart',
+          'chartType': 'TableChart',
           'containerId': 'programmatic_chart_div',
           'options': {
             'title': 'Employee Ratings',
