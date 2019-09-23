@@ -3,6 +3,7 @@
 @section('content')
 
 <ul>
+<?php dd($reports); ?>
 @foreach($reports as $report)
 
 <li>
@@ -14,7 +15,10 @@
 @endforeach
 </ul>
 
-  
+  <h4><>Report</h4>
+
+
+
 
 
   
